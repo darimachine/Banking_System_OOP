@@ -30,6 +30,6 @@ public:
 	
 	void exit() const;
 	void whoami() const;
-	void help() const;
+	static void help();
 };
 

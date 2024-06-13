@@ -7,6 +7,7 @@ class Bill
 	unsigned accountID;
 	double balance;
 public:
+	Bill() = default;
 	Bill(const MyString& bankName,double balance,unsigned id);
 	double getBalance() const;
 	unsigned getID() const;

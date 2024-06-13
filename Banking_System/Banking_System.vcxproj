@@ -140,6 +140,7 @@
     </ClCompile>
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientCommand.cpp" />
+    <ClCompile Include="CloseAccountTask.cpp" />
     <ClCompile Include="OpenAccountTask.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="TaskFactory.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Check.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientCommand.h" />
+    <ClInclude Include="CloseAccountTask.h" />
     <ClInclude Include="OpenAccountTask.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="TaskFactory.h" />

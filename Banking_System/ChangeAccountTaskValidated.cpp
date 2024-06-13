@@ -1,4 +1,5 @@
 #include "ChangeAccountTaskValidated.h"
+#include "Client.h"
 using std::cout;
 using std::endl;
 ChangeAccountTaskValidated::ChangeAccountTaskValidated(const MyString& newBank, Client& client, Bill& billToChange)
@@ -21,4 +22,9 @@ void ChangeAccountTaskValidated::viewMessage() const
 {
 	cout << "Change - " << billToValidate.getBankName() << " asks if " << client.getName() << " is real user.\n";
 	//[2] Change - Health_Savings_Accounts asks if Stancho is real user.
+}
+
+Task* ChangeAccountTaskValidated::clone() const
+{
+	return new ChangeAccountTaskValidated(*this);
 }

@@ -2,7 +2,7 @@
 //#include "Task.h"
 #include "ChangeAccountTask.h"
 
-class ChangeAccountTaskNoValidated : ChangeAccountTask
+class ChangeAccountTaskNoValidated : public ChangeAccountTask
 {
 	// Inherited via Task
 public:
@@ -11,5 +11,8 @@ public:
 
 	// Inherited via Task
 	void viewMessage() const override;
+
+	// Inherited via ChangeAccountTask
+	Task* clone() const override;
 };
 

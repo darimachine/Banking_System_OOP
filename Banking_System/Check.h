@@ -9,6 +9,7 @@ private:
 	void makeUniqueTime();
 	
 public:
+	Check() = default;
 	Check(unsigned cashToSend);
 	unsigned getCash() const;
 };

@@ -5,8 +5,8 @@
 class Bank
 {
 	MyString name;
-	unsigned billCounter = 0;
-	Vector<BankEmployee> bankemployees;
+	unsigned billCounter = 0; // for unique ID's on every bill
+	Vector<BankEmployee> bankEmployees;
 
 public:
 	void addTask(Task* task);

@@ -6,14 +6,20 @@
 #include "User.h"
 #include "Client.h"
 #include "PolyMorphic_Ptr.hpp"
+#include "Bill.h"
 int main()
 {
-    User* user = nullptr;;
-    Client client("Serhan", "1234567890", 12, "123");
-    user = &client;
-    user
-    
     std::srand(std::time(0));
+ 
+    Client client("Serhan", "1234567890", 12, "123");
+    Bill b("RandomBank", 150, 1);
+    client.addBill(b);
+    Task* task = client.change("NewBank", "RandomBank", 1);
+    task->viewDetails();
+    task->viewMessage();
+  
+    
+   
     
 }
 

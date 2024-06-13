@@ -1,6 +1,8 @@
 #include "User.h"
 int User::EGN_MAX_CHAR = 10;
 int User::MAX_AGE = 150;
+using std::cout;
+using std::endl;
 static bool checkIfIsLetter(const char ch)
 {
 	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
@@ -74,6 +76,7 @@ const MyString& User::getName() const
 
 void User::whoami() const
 {
+	cout << "You are " << name<<endl;
 }
 
 unsigned User::getAge() const
@@ -81,7 +84,7 @@ unsigned User::getAge() const
 	return age;
 }
 
-void User::help() const
+void User::help()
 {
 }
 

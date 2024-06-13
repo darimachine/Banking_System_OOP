@@ -16,3 +16,5 @@ const Bill& ChangeAccountTask::getBill() const
 {
 	return billToValidate;
 }
+
+

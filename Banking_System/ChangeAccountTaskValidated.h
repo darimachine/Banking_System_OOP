@@ -1,5 +1,6 @@
 #pragma once
 #include "ChangeAccountTask.h"
+
 class ChangeAccountTaskValidated : public ChangeAccountTask 
 {
 	
@@ -9,5 +10,6 @@ public:
 	// Inherited via ChangeAccountTask
 	void viewDetails() const override;
 	void viewMessage() const override;
+	Task* clone() const override;
 };
 

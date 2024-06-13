@@ -1,4 +1,5 @@
 #include "ChangeAccountTaskNoValidated.h"
+#include "Client.h"
 using std::cout;
 using std::endl;
 
@@ -22,5 +23,10 @@ void ChangeAccountTaskNoValidated::viewMessage() const
 {
 	cout << "Change - " << client.getName() << " want to join " << billToValidate.getBankName() << ".\n";
 	
+}
+
+Task* ChangeAccountTaskNoValidated::clone() const
+{
+	return new ChangeAccountTaskNoValidated(*this);
 }
 

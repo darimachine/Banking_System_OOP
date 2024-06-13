@@ -1,6 +1,7 @@
 #pragma once
 #include "MyString.h"
-#include "Client.h"
+
+class Client;
 class Task
 {
 protected:
@@ -12,8 +13,10 @@ protected:
 
 public:
 	Task(const MyString& type, Client& clientInfo);
+	//Task(const MyString& type, Client& clientInfo);
 	virtual void viewDetails() const = 0;
 	virtual void viewMessage() const = 0;
+	virtual Task* clone() const = 0;
 	const MyString& getType() const;
 	Client& getClient();
 };
