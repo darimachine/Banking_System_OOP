@@ -14,12 +14,8 @@ void Client::help()
 }
 Task* Client::change(const MyString& newBankName, const MyString& currentBankName, unsigned accountID)
 {
-	int index = findbankAccountIndex(currentBankName, accountID);
-	if (index == -1)
-	{
-		throw std::exception("There is no such BankAccount");
-	}
-	return new ChangeAccountTaskNoValidated(newBankName, *this, bankAccounts[index]);
+	
+	return new ChangeAccountTaskNoValidated(newBankName, *this, currentBankName, accountID);
 }
 
 void Client::list(const MyString& bankName) const
@@ -43,12 +39,29 @@ void Client::messages() const
 	
 }
 
+void Client::addMessage(const MyString& message)
+{
+	msg.pushBack(message);
+}
+
 int Client::findbankAccountIndex(const MyString& bankName,unsigned accountID) const
 {
 	unsigned size = bankAccounts.getSize();
 	for (int i = 0; i < size; i++)
 	{
 		if (bankAccounts[i].getID() == accountID && bankAccounts[i].getBankName()==bankName) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+int Client::findCheckIndex(const MyString& code) const
+{
+	unsigned size = checks.getSize();
+	for (int i = 0; i < size; i++)
+	{
+		if (checks[i].getCode() == code) {
 			return i;
 		}
 	}
@@ -76,6 +89,17 @@ void Client::removeBill(const MyString& bankName, unsigned accountID)
 	bankAccounts.popAt(index);
 }
 
+const Bill& Client::getBill(int index) const
+{
+	return bankAccounts[index];
+}
+
+Bill& Client::getBill(int index)
+{
+	return bankAccounts[index];
+	
+}
+
 
 
 void Client::check_avl(const MyString& bankName, unsigned accountNumber) const
@@ -97,12 +121,26 @@ Task* Client::open(const MyString& bankName)
 
 Task* Client::close(const MyString& bankName, unsigned accountNumber)
 {
-	int index = findbankAccountIndex(bankName, accountNumber);
-	if (index == -1)
+	
+	return new CloseAccountTask(*this,bankName,accountNumber);
+}
+
+void Client::redeem(const MyString& bankName, unsigned accountNumber, const MyString& verificationCode)
+{
+	int bankIndex = findbankAccountIndex(bankName, accountNumber);
+	if (bankIndex == -1)
 	{
 		throw std::exception("There is no such BankAccount");
 	}
-	return new CloseAccountTask(*this,bankAccounts[index]);
+	int checkIndex = findCheckIndex(verificationCode);
+	if (checkIndex == -1)
+	{
+		throw std::exception("There is no such Check with this code");
+	}
+	bankAccounts[bankIndex].deposit(checks[checkIndex].getCash());
+	checks.popAt(checkIndex);
+
+	
 }
 
 

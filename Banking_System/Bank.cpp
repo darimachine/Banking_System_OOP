@@ -1,11 +1,15 @@
 #include "Bank.h"
 
-void Bank::incrementBillCounter()
+void Bank::addEmployee(BankEmployee& employee)
 {
-	billCounter++;
+	bankEmployees.pushBack(&employee);
 }
 
-unsigned Bank::getBillCounter() const
+void Bank::printOnIndex(int index)
 {
-	return billCounter;
+	std::cout<<bankEmployees[index]->getName();
 }
+
+
+
+

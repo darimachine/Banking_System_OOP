@@ -20,3 +20,17 @@ Client& Task::getClient()
     return client;
     
 }
+
+const MyString& Task::getBankNameForChange() const
+{
+    throw std::exception("Not Implemented");
+}
+
+unsigned Task::getBankNameIdChange() const
+{
+    throw std::exception("Not Implemented");
+}
+
+
+
+

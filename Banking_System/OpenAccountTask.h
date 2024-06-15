@@ -12,5 +12,8 @@ public:
 
 	// Inherited via Task
 	Task* clone() const override;
+
+	// Inherited via Task
+	virtual Task* finish();
 };
 

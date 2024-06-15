@@ -1,6 +1,6 @@
 #pragma once
 #include "MyString.h"
-
+class Bill;
 class Client;
 class Task
 {
@@ -17,7 +17,12 @@ public:
 	virtual void viewDetails() const = 0;
 	virtual void viewMessage() const = 0;
 	virtual Task* clone() const = 0;
+	
 	const MyString& getType() const;
+	virtual const MyString& getBankNameForChange() const;
+	virtual unsigned getBankNameIdChange() const;
+	virtual Task* finish() = 0;
 	Client& getClient();
+	virtual ~Task() = default;
 };
 

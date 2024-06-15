@@ -2,8 +2,8 @@
 
 
 
-ChangeAccountTask::ChangeAccountTask(const MyString& type, const MyString& newBank, Client& client, Bill& billToChange)
-	:Task(type,client),newBank(newBank),billToValidate(billToChange)
+ChangeAccountTask::ChangeAccountTask(const MyString& type, const MyString& newBank, Client& client, const MyString& oldBank, unsigned accountID)
+	:Task(type,client),newBank(newBank),oldBank(oldBank),accountID(accountID)
 {
 }
 
@@ -12,9 +12,16 @@ const MyString& ChangeAccountTask::getNewBank() const
 	return newBank;
 }
 
-const Bill& ChangeAccountTask::getBill() const
+const MyString& ChangeAccountTask::getBankNameForChange() const
 {
-	return billToValidate;
+	return oldBank;
+	// TODO: insert return statement here
 }
+
+unsigned ChangeAccountTask::getBankNameIdChange() const
+{
+	return accountID;
+}
+
 
 

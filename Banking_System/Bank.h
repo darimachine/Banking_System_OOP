@@ -2,15 +2,18 @@
 #include "MyVector.hpp"
 #include "Task.h"
 #include "BankEmployee.h"
+#include "SharedPtr.hpp"
+#include "UniquePointer.hpp"
 class Bank
 {
 	MyString name;
-	unsigned billCounter = 0; // for unique ID's on every bill
-	Vector<BankEmployee> bankEmployees;
+	Vector<BankEmployee*> bankEmployees;
 
 public:
+	Bank() = default;
+	void addEmployee(BankEmployee& employee);
+	void printOnIndex(int index);
 	void addTask(Task* task);
-	void incrementBillCounter();
-	unsigned getBillCounter() const;
+	
 };
 

@@ -1,5 +1,6 @@
 #include "OpenAccountTask.h"
 #include "Client.h"
+#include "IDGenerateParse.h"
 using std::cout;
 using std::endl;
 OpenAccountTask::OpenAccountTask(const MyString& bankName,Client& clientInfo)
@@ -23,4 +24,21 @@ void OpenAccountTask::viewMessage() const
 Task* OpenAccountTask::clone() const
 {
 	return new OpenAccountTask(*this);
+}
+
+Task* OpenAccountTask::finish()
+{
+	unsigned id = generateUniqueNumber();
+	Bill account(bankName, 0, id);
+	client.addBill(account);
+	MyString tempMessage = "You opened an account in ";
+	tempMessage += bankName;
+	tempMessage += "! Your account id is ";
+	char idStr[20];
+	intToStr(id, idStr);
+	tempMessage += idStr;
+	tempMessage += ".";
+	//besen sum
+	client.addMessage(tempMessage);
+	return nullptr;
 }

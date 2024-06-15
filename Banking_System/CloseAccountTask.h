@@ -3,14 +3,16 @@
 #include "Bill.h"
 class CloseAccountTask : public Task
 {
-	Bill& bankAccount;
+	MyString bank;
+	unsigned accountID;
+
 public:
-	CloseAccountTask(Client& client, Bill& account);
+	CloseAccountTask(Client& client, const MyString& bank,unsigned id);
 	// Inherited via Task
 	void viewDetails() const override;
 
 	void viewMessage() const override;
-
+	Task* finish() override;
 	Task* clone() const override;
 
 };

@@ -6,7 +6,7 @@ class ChangeAccountTaskNoValidated : public ChangeAccountTask
 {
 	// Inherited via Task
 public:
-	ChangeAccountTaskNoValidated(const MyString& newBank, Client& client, Bill& billToChange);
+	ChangeAccountTaskNoValidated(const MyString& newBank, Client& client, const MyString& oldBank, unsigned accountID);
 	void viewDetails() const override;
 
 	// Inherited via Task
@@ -14,5 +14,8 @@ public:
 
 	// Inherited via ChangeAccountTask
 	Task* clone() const override;
+
+	// Inherited via ChangeAccountTask
+	Task* finish() override;
 };
 

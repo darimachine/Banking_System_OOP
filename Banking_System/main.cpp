@@ -7,20 +7,39 @@
 #include "Client.h"
 #include "PolyMorphic_Ptr.hpp"
 #include "Bill.h"
+#include "BankEmployee.h"
+#include "Bank.h"
+#include <crtdbg.h>
+using std::cout;
+using std::endl;
 int main()
 {
-    std::srand(std::time(0));
- 
-    Client client("Serhan", "1234567890", 12, "123");
-    Bill b("RandomBank", 150, 1);
-    client.addBill(b);
-    Task* task = client.change("NewBank", "RandomBank", 1);
-    task->viewDetails();
-    task->viewMessage();
+    std::srand((std::time(0)));
+    //_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+   /* while (1){*/
+    
+        //_CrtDumpMemoryLeaks();
+        Client client("Serhan", "1234567890", 12, "123");
+        Bill b("RandomBank", 150, 1);
+        client.addBill(b);
+        //int* shiban = new int(5);
+        Task* me = new OpenAccountTask("a",client);
+        Task* task = client.open("NewBank");
+        BankEmployee b1("Sean", "1234560890", 12, "123","RandomBank");
+        BankEmployee b2("Bean", "9234560890", 12, "123", "RandomBank");
+        b1.addTask(task);
+        b1.approve(1);
+        Bank bank;
+        client.messages();
   
-    
+        
+        task->viewDetails();
+        task->viewMessage();
+        
+        //delete task;
+    //}
    
-    
+  
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

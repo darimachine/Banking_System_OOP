@@ -41,7 +41,7 @@ private:
 
     void moveFrom(MyString&& other);
 
-    char* _data;
+    char* _data = nullptr;
     size_t _size;
     size_t _allocatedDataSize;
 };

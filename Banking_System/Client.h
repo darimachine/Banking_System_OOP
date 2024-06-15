@@ -18,13 +18,19 @@ class Client :public User
 	
 	Vector<Bill> bankAccounts;
 	Vector<Check> checks;
-	int findbankAccountIndex(const MyString& bankName, unsigned accountID) const;
+	
+	int findCheckIndex(const MyString& code) const;
 public:
 	Client(const MyString& name, const MyString& egn, unsigned age, const MyString& password);
 
 	void addCheck(const Check& check);
 	void addBill(const Bill& bill);
 	void removeBill(const MyString& bankName,unsigned accountID);
+	const Bill& getBill(int index) const;
+	Bill& getBill(int index);
+
+
+	int findbankAccountIndex(const MyString& bankName, unsigned accountID) const;
 
 	static void help();
 
@@ -32,7 +38,7 @@ public:
 	Task* open(const MyString& bankName);
 	Task* close(const MyString& bankName, unsigned accountNumber);
 
-	void redeem(const MyString& bankName, const MyString& accountNumber, const MyString& verificationCode);
+	void redeem(const MyString& bankName, unsigned accountNumber, const MyString& verificationCode);
 
 	Task* change(const MyString& newBankName,const MyString& currentBankName,unsigned accountNumber);
 	void list(const MyString& bankName) const;

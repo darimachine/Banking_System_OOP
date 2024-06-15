@@ -1,34 +1,64 @@
 #include "Check.h"
-#include <ctime>
+
 #pragma warning(disable : 4996)
 using std::cout;
-void Check::generateUniqueCheck()
+static bool isLetterOrNumber(const char ch)
 {
-    makeUniqueTime();
-    // Allowed Symbols
-    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    for (int i = 0; i < 3; ++i) {
-        uniqueCode += charset[rand() % (sizeof(charset) - 1)];
+    
+    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'))
+    {
+        return true;
     }
-   
+    return false;
 }
-//Guarantees unique code..
-void Check::makeUniqueTime()
+int Check::MAX_CODE_SIZE = 3;
+bool Check::isValidCode(const MyString& code)
 {
+    if (code.getSize() != MAX_CODE_SIZE)
+    {
+        return false;
+    }
+    unsigned size = MAX_CODE_SIZE;
+    for (int i = 0; i < size; i++)
+    {
+        if (!isLetterOrNumber(code[i])) {
+            return false;
+        }
+    }
+    return true;
     
-    std::time_t now = std::time(0); // gets current time
-    char timestamp[20];
-    
-    //formats time and saves it to timestamp array as an string
-    std::strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", std::localtime(&now));
 }
 
-Check::Check(unsigned cashToSend) :cashToSend(cashToSend)
+Check::Check(const MyString& sender, const MyString& code, unsigned cashToSend, const MyString& egn) :sender(sender),cashToSend(cashToSend),egn(egn)
 {
-    generateUniqueCheck();
+    if (!isValidCode(code))
+    {
+        throw std::exception("Invalid code");
+    }
+    uniqueCode = code;
 }
 
 unsigned Check::getCash() const
 {
     return cashToSend;
 }
+
+bool Check::checkIfCodeIsRight(const MyString& code) const
+{
+    return code==uniqueCode;
+}
+
+const MyString& Check::getSender() const
+{
+    return sender;
+}
+
+const MyString& Check::getEgn() const
+{
+    return egn;
+}
+
+//const MyString& Check::getCode() const
+//{
+//    return uniqueCode;
+//}

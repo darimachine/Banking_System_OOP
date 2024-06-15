@@ -141,9 +141,9 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientCommand.cpp" />
     <ClCompile Include="CloseAccountTask.cpp" />
+    <ClCompile Include="ExternalCompanyEmployee.cpp" />
     <ClCompile Include="OpenAccountTask.cpp" />
     <ClCompile Include="Task.cpp" />
-    <ClCompile Include="TaskFactory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="User.cpp" />
@@ -161,14 +161,18 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientCommand.h" />
     <ClInclude Include="CloseAccountTask.h" />
+    <ClInclude Include="ExternalCompanyEmployee.h" />
+    <ClInclude Include="IDGenerateParse.h" />
     <ClInclude Include="OpenAccountTask.h" />
+    <ClInclude Include="SharedPtr.hpp" />
     <ClInclude Include="Task.h" />
-    <ClInclude Include="TaskFactory.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="MyVector.hpp" />
     <ClInclude Include="Pair.hpp" />
     <ClInclude Include="PolyMorphic_Ptr.hpp" />
+    <ClInclude Include="UniquePointer.hpp" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="WeakPtr.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

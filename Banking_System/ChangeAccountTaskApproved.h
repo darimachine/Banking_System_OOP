@@ -4,7 +4,7 @@ class Client;
 class ChangeAccountTaskApproved : public ChangeAccountTask
 {
 public:
-	ChangeAccountTaskApproved(const MyString& newBank, Client& client, Bill& billToChange);
+	ChangeAccountTaskApproved(const MyString& newBank, Client& client, const MyString& oldBank, unsigned accountID);
 
 	// Inherited via ChangeAccountTask
 	void viewDetails() const override;
@@ -12,5 +12,8 @@ public:
 
 	
 	Task* clone() const override;
+
+	// Inherited via ChangeAccountTask
+	Task* finish() override;
 };
 

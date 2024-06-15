@@ -1,13 +1,18 @@
 #include "BankEmployee.h"
-
+#include "Client.h"
 using std::cout;
 using std::endl;
 
 
 
+BankEmployee::BankEmployee(const MyString& name, const MyString& egn, unsigned age, const MyString& password, const MyString& bankAssociated)
+	:User(name,egn,age,password),bankAssociated(bankAssociated)
+{
+}
+
 void BankEmployee::addTask(Task* task)
 {
-	tasks.pushBack(task)
+	tasks.pushBack(task);
 }
 void BankEmployee::showTasks() const
 {
@@ -18,6 +23,44 @@ void BankEmployee::showTasks() const
 		tasks[i]->viewMessage();
 		cout << endl;
 	}
+}
+
+void BankEmployee::view(unsigned taskID) const
+{
+	tasks[taskID]->viewDetails();
+}
+
+void BankEmployee::removeTask(unsigned id)
+{
+	tasks.popAt(id);
+}
+
+void BankEmployee::approve(unsigned taskID)
+{
+	tasks[taskID - 1]->finish();
+}
+unsigned BankEmployee::getTaskCount() const {
+	return tasks.getSize();
+}
+
+void BankEmployee::disapprove(unsigned taskID, const MyString& message)
+{
+	tasks[taskID - 1]->getClient().addMessage(message);
+	removeTask(taskID - 1);
+
+}
+
+Task* BankEmployee::validate(unsigned taskID)
+{
+	PolymorphicPtr<Task> currentTask = tasks[taskID - 1];
+	if (currentTask->getType() != "Change Not Validated") {
+		throw std::exception("You cannot validate this response");
+	}
+	MyString oldBank = currentTask->getBankNameForChange();
+	unsigned accountID = currentTask->getBankNameIdChange();
+	Client& currentClient = currentTask->getClient();
+	removeTask(taskID - 1);
+	return new ChangeAccountTaskValidated(bankAssociated, currentClient, oldBank, accountID);
 }
 
 void BankEmployee::help()

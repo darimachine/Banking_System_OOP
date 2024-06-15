@@ -57,9 +57,6 @@
     <ClCompile Include="Bill.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ClientCommand.cpp">
       <Filter>Source Files\ClientCommands</Filter>
     </ClCompile>
@@ -99,6 +96,9 @@
     <ClCompile Include="BankEmployee.cpp">
       <Filter>Source Files\Users</Filter>
     </ClCompile>
+    <ClCompile Include="ExternalCompanyEmployee.cpp">
+      <Filter>Source Files\Users</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Check.h">
@@ -111,9 +111,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bill.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ClientCommand.h">
@@ -159,6 +156,21 @@
       <Filter>Header Files\Users</Filter>
     </ClInclude>
     <ClInclude Include="BankEmployee.h">
+      <Filter>Header Files\Users</Filter>
+    </ClInclude>
+    <ClInclude Include="UniquePointer.hpp">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedPtr.hpp">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="WeakPtr.hpp">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="IDGenerateParse.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternalCompanyEmployee.h">
       <Filter>Header Files\Users</Filter>
     </ClInclude>
   </ItemGroup>
