@@ -3,6 +3,7 @@
 class Client;
 class ChangeAccountTaskApproved : public ChangeAccountTask
 {
+	double getBalance() const;
 public:
 	ChangeAccountTaskApproved(const MyString& newBank, Client& client, const MyString& oldBank, unsigned accountID);
 

@@ -67,6 +67,7 @@ void User::setPassword(const MyString& password)
 
 void User::exit() const
 {
+	cout << "Succesfully exited\n";
 }
 
 const MyString& User::getName() const
@@ -82,6 +83,11 @@ void User::whoami() const
 unsigned User::getAge() const
 {
 	return age;
+}
+
+bool User::isValidPassword(const MyString& pw) const
+{
+	return password==pw;
 }
 
 void User::help()

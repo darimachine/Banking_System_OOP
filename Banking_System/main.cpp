@@ -23,18 +23,23 @@ int main()
         Bill b("RandomBank", 150, 1);
         client.addBill(b);
         //int* shiban = new int(5);
-        Task* me = new OpenAccountTask("a",client);
+        //Task* me = new OpenAccountTask("a",client);
         Task* task = client.open("NewBank");
         BankEmployee b1("Sean", "1234560890", 12, "123","RandomBank");
         BankEmployee b2("Bean", "9234560890", 12, "123", "RandomBank");
         b1.addTask(task);
-        b1.approve(1);
-        Bank bank;
-        client.messages();
-  
-        
         task->viewDetails();
         task->viewMessage();
+        b1.approve(1);
+        
+        client.messages();
+        int id;
+        std::cin >> id;
+        client.getBill(1).deposit(120);
+        client.check_avl("NewBank", id);
+  
+        
+        
         
         //delete task;
     //}

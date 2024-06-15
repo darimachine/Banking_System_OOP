@@ -32,5 +32,5 @@ Task* ChangeAccountTaskValidated::clone() const
 
 Task* ChangeAccountTaskValidated::finish()
 {
-	return nullptr;
+	return new ChangeAccountTaskApproved(newBank,client,oldBank,accountID);
 }

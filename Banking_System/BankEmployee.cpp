@@ -35,9 +35,11 @@ void BankEmployee::removeTask(unsigned id)
 	tasks.popAt(id);
 }
 
-void BankEmployee::approve(unsigned taskID)
+Task* BankEmployee::approve(unsigned taskID)
 {
-	tasks[taskID - 1]->finish();
+	Task* nextTask = tasks[taskID - 1]->finish(); // can be nullptr if is not then i must handle it outside
+	removeTask(taskID - 1);
+	return nextTask;
 }
 unsigned BankEmployee::getTaskCount() const {
 	return tasks.getSize();
@@ -45,7 +47,11 @@ unsigned BankEmployee::getTaskCount() const {
 
 void BankEmployee::disapprove(unsigned taskID, const MyString& message)
 {
-	tasks[taskID - 1]->getClient().addMessage(message);
+	MyString infiks = "Your ";
+	infiks+=tasks[taskID - 1]->getType();
+	infiks += " request was not approved. Reason: ";
+	infiks += message;
+	tasks[taskID - 1]->getClient().addMessage(infiks);
 	removeTask(taskID - 1);
 
 }

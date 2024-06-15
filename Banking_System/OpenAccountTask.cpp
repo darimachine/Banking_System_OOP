@@ -1,6 +1,6 @@
 #include "OpenAccountTask.h"
 #include "Client.h"
-#include "IDGenerateParse.h"
+
 using std::cout;
 using std::endl;
 OpenAccountTask::OpenAccountTask(const MyString& bankName,Client& clientInfo)

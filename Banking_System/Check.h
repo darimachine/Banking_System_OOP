@@ -15,7 +15,7 @@ public:
 	Check(const MyString& sender,const MyString& code,unsigned cashToSend,const MyString& egn);
 	unsigned getCash() const;
 	bool checkIfCodeIsRight(const MyString& code) const;
-	//const MyString& getCode() const;
+	const MyString& getCode() const;
 	const MyString& getSender() const;
 	const MyString& getEgn() const;
 };

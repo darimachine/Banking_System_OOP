@@ -142,6 +142,7 @@
     <ClCompile Include="ClientCommand.cpp" />
     <ClCompile Include="CloseAccountTask.cpp" />
     <ClCompile Include="ExternalCompanyEmployee.cpp" />
+    <ClCompile Include="IDGeneratedParse.cpp" />
     <ClCompile Include="OpenAccountTask.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="main.cpp" />

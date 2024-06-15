@@ -44,6 +44,11 @@ void Client::addMessage(const MyString& message)
 	msg.pushBack(message);
 }
 
+void Client::addMessage(MyString&& message)
+{
+	msg.pushBack(std::move(message));
+}
+
 int Client::findbankAccountIndex(const MyString& bankName,unsigned accountID) const
 {
 	unsigned size = bankAccounts.getSize();
@@ -78,9 +83,19 @@ void Client::addCheck(const Check& check)
 	checks.pushBack(check);
 }
 
+void Client::addCheck(Check&& check)
+{
+	checks.pushBack(std::move(check));
+}
+
 void Client::addBill(const Bill& bill)
 {
 	bankAccounts.pushBack(bill);
+}
+
+void Client::addBill(Bill&& bill)
+{
+	bankAccounts.pushBack(std::move(bill));
 }
 
 void Client::removeBill(const MyString& bankName, unsigned accountID)

@@ -58,7 +58,7 @@ const MyString& Check::getEgn() const
     return egn;
 }
 
-//const MyString& Check::getCode() const
-//{
-//    return uniqueCode;
-//}
+const MyString& Check::getCode() const
+{
+    return uniqueCode;
+}

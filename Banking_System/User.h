@@ -15,6 +15,7 @@ protected:
 	MyString password;
 
 public:
+	User() = default;
 	User(const MyString& name, const MyString& egn, unsigned age, const MyString& password);
 	
 	void setName(const MyString& name);
@@ -22,6 +23,7 @@ public:
 	void setAge(unsigned age);
 	void setPassword(const MyString& password);
 
+	bool isValidPassword(const MyString& password) const;
 	const MyString& getName() const;
 	unsigned getAge() const;
 	const MyString& getEGN() const;

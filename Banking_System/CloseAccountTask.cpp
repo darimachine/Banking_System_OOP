@@ -32,5 +32,6 @@ Task* CloseAccountTask::clone() const
 
 Task* CloseAccountTask::finish()
 {
+    client.removeBill(bank, accountID);
     return nullptr;
 }

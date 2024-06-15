@@ -99,6 +99,9 @@
     <ClCompile Include="ExternalCompanyEmployee.cpp">
       <Filter>Source Files\Users</Filter>
     </ClCompile>
+    <ClCompile Include="IDGeneratedParse.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Check.h">
