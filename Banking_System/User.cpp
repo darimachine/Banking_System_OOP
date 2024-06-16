@@ -36,7 +36,7 @@ User::User(const MyString& name, const MyString& egn, unsigned age, const MyStri
 void User::setName(const MyString& name)
 {
 	if (!validateOnlyLetters(name)) {
-		throw std::invalid_argument("Its not letter");
+		throw std::invalid_argument("Invalid Name It must contain Only Letters");
 	}
 	this->name = name;
 

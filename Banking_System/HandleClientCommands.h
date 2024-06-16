@@ -2,7 +2,9 @@
 #include "Command.h"
 class HandleClientCommands : public Command
 {
-	// Inherited via Command
+
+public:
+
 	void execute(BankSystem* app) override;
 };
 

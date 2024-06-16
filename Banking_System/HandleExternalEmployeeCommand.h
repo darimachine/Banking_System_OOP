@@ -2,7 +2,8 @@
 #include "Command.h"
 class HandleExternalEmployeeCommand : public Command
 {
-	// Inherited via Command
+public:
+
 	void execute(BankSystem* app) override;
 };
 

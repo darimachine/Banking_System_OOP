@@ -19,6 +19,11 @@ BankEmployee* Bank::findTheLeastEngagedEmployee()
 	return leastEngagedEmployee;
 }
 
+Bank::Bank(const MyString& name) :name(name)
+{
+
+}
+
 const MyString& Bank::getName() const
 {
 	return name;

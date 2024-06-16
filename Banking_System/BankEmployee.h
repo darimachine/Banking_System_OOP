@@ -16,6 +16,7 @@ public:
 	void removeTask(unsigned id);
 
 	unsigned getTaskCount() const;
+	const MyString& getBankAssociated() const;
 
 	void view(unsigned taskID) const;
 	Task* approve(unsigned taskID);

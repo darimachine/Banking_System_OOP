@@ -26,6 +26,7 @@ class BankSystem
 	BankSystem& operator=(const BankSystem&) = delete;
 	bool userAlreadyExistsCheck(User*);
 	bool bankAlreadyExistsCheck(const MyString& bankName);
+
 public:
 
 	static BankSystem& getInstance();
@@ -35,6 +36,9 @@ public:
 	const Vector<Client>& getClients() const;
 	const Vector<Bank>& getBanks() const;
 	const Vector<BankEmployee>& getBankEmployee() const;
+
+	
+
 	void signUpBank(Bank&& bank);
 	void signUpClient(Client&& client);
 	void signUpBankEmployee(BankEmployee&& bankEmployee);

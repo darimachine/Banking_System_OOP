@@ -35,7 +35,7 @@ bool BankSystem::bankAlreadyExistsCheck(const MyString& bankName)
     for (int i = 0; i < size; i++)
     {
         if (banks[i].getName() == bankName) {
-            throw std::runtime_error("Bank Already Exists");
+            return true;
         }
     }
     return false;
@@ -79,7 +79,9 @@ const Vector<BankEmployee>& BankSystem::getBankEmployee() const
 void BankSystem::signUpBank(Bank&& bank)
 {
     
-    bankAlreadyExistsCheck(bank.getName());
+    if (bankAlreadyExistsCheck(bank.getName())) {
+        throw std::invalid_argument("Bank Already Exists");
+    }
     banks.pushBack(std::move(bank));
     
     
@@ -95,6 +97,9 @@ void BankSystem::signUpClient(Client&& client)
 void BankSystem::signUpBankEmployee(BankEmployee&& bankEmployee)
 {
     userAlreadyExistsCheck(&bankEmployee);
+    if (!bankAlreadyExistsCheck(bankEmployee.getBankAssociated())) {
+        throw std::invalid_argument("Bank Does Not Exists");
+    }
     bankEmployees.pushBack(std::move(bankEmployee));
 }
 

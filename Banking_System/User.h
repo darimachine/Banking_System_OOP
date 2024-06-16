@@ -23,7 +23,8 @@ public:
 	void setAge(unsigned age);
 	void setPassword(const MyString& password);
 
-	bool isValidPassword(const MyString& password) const;
+	bool isValidPassword(const MyString& pw) const;
+
 	const MyString& getName() const;
 	unsigned getAge() const;
 	const MyString& getEGN() const;

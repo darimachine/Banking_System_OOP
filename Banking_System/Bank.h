@@ -11,6 +11,8 @@ class Bank
 	BankEmployee* findTheLeastEngagedEmployee();
 public:
 	Bank() = default;
+	Bank(const MyString& name);
+	
 
 	const MyString& getName() const;
 

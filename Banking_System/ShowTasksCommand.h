@@ -1,5 +1,9 @@
 #pragma once
-class ShowTasksCommand
+#include "Command.h"
+class ShowTasksCommand: public Command
 {
+public:
+
+	void execute(BankSystem* app) override;
 };
 

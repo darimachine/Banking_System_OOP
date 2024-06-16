@@ -28,9 +28,15 @@ void RunCommand::execute(BankSystem* app)
 		}
 
 		case LoggedUserType::BankEmployee:
+		{
+			bankEmployeCommand.execute(app);
 			break;
+		}
 		case LoggedUserType::ExternalEmployee:
+		{
+			externalEmployeCommand.execute(app);
 			break;
+		}
 		default:
 			break;
 		}

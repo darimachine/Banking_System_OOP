@@ -177,6 +177,9 @@
     <ClCompile Include="HandleNoneCommand.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
+    <ClCompile Include="LogOutCommand.cpp">
+      <Filter>Source Files\SystemCommands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Check.h">
@@ -309,6 +312,9 @@
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
     <ClInclude Include="HandleNoneCommand.h">
+      <Filter>Header Files\SystemCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="LogOutCommand.h">
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
   </ItemGroup>

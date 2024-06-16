@@ -78,3 +78,8 @@ void BankEmployee::help()
 	std::cout << "4. disapprove [task_id] [message]: The employee completes the task and denies the request.\n";
 	std::cout << "5. validate [task_id]: The employee from the new bank makes a request to the old bank, validating whether the user has entered correct data. This validation does not go through an employee of the old bank and is returned immediately. Only Change tasks can be validated.\n";
 }
+
+const MyString& BankEmployee::getBankAssociated() const
+{
+	return bankAssociated;
+}

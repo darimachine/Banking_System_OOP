@@ -155,6 +155,7 @@
     <ClCompile Include="IDGeneratedParse.cpp" />
     <ClCompile Include="ListCommand.cpp" />
     <ClCompile Include="LoginCommand.cpp" />
+    <ClCompile Include="LogOutCommand.cpp" />
     <ClCompile Include="MessagesCommand.cpp" />
     <ClCompile Include="OpenAccountTask.cpp" />
     <ClCompile Include="OpenCommand.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="IDGenerateParse.h" />
     <ClInclude Include="ListCommand.h" />
     <ClInclude Include="LoginCommand.h" />
+    <ClInclude Include="LogOutCommand.h" />
     <ClInclude Include="MessagesCommand.h" />
     <ClInclude Include="OpenAccountTask.h" />
     <ClInclude Include="OpenCommand.h" />
