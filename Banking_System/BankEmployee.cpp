@@ -5,6 +5,16 @@ using std::endl;
 
 
 
+bool BankEmployee::isValidTaskID(unsigned taskID) const
+{
+	taskID--;
+	if (taskID<0 || taskID>tasks.getSize())
+	{
+		return false;
+	}
+	return true;
+}
+
 BankEmployee::BankEmployee(const MyString& name, const MyString& egn, unsigned age, const MyString& password, const MyString& bankAssociated)
 	:User(name,egn,age,password),bankAssociated(bankAssociated)
 {
@@ -27,7 +37,11 @@ void BankEmployee::showTasks() const
 
 void BankEmployee::view(unsigned taskID) const
 {
-	tasks[taskID]->viewDetails();
+	if (!isValidTaskID(taskID))
+	{
+		throw std::invalid_argument("Task ID is Invalid");
+	}
+	tasks[taskID-1]->viewDetails();
 }
 
 void BankEmployee::removeTask(unsigned id)
@@ -37,6 +51,10 @@ void BankEmployee::removeTask(unsigned id)
 
 Task* BankEmployee::approve(unsigned taskID)
 {
+	if (!isValidTaskID(taskID))
+	{
+		throw std::invalid_argument("Task ID is Invalid");
+	}
 	Task* nextTask = tasks[taskID - 1]->finish(); // can be nullptr if is not then i must handle it outside
 	removeTask(taskID - 1);
 	return nextTask;

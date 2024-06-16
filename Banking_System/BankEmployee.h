@@ -7,7 +7,7 @@ class BankEmployee : public User
 {
 	Vector<PolymorphicPtr<Task>> tasks;
 	MyString bankAssociated;
-
+	bool isValidTaskID(unsigned taskID) const;
 public:
 	BankEmployee() = default;
 	BankEmployee(const MyString& name, const MyString& egn, unsigned age, const MyString& password,const MyString& bankAssociated);

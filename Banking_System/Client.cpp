@@ -15,6 +15,11 @@ void Client::help()
 Task* Client::change(const MyString& newBankName, const MyString& currentBankName, unsigned accountID)
 {
 	
+	int index = findbankAccountIndex(currentBankName, accountID);
+	if (index == -1)
+	{
+		throw std::invalid_argument("There is no such BankAccount");
+	}
 	return new ChangeAccountTaskNoValidated(newBankName, *this, currentBankName, accountID);
 }
 
@@ -123,7 +128,7 @@ void Client::check_avl(const MyString& bankName, unsigned accountNumber) const
 	int index = findbankAccountIndex(bankName, accountNumber);
 	if (index == -1)
 	{
-		throw std::exception("There is no such BankAccount");
+		throw std::invalid_argument("There is no such BankAccount");
 	}
 	cout << bankAccounts[index].getBalance() << "$\n";
 
@@ -136,7 +141,11 @@ Task* Client::open(const MyString& bankName)
 
 Task* Client::close(const MyString& bankName, unsigned accountNumber)
 {
-	
+	int index = findbankAccountIndex(bankName, accountNumber);
+	if (index == -1)
+	{
+		throw std::invalid_argument("There is no such BankAccount");
+	}
 	return new CloseAccountTask(*this,bankName,accountNumber);
 }
 
@@ -145,12 +154,12 @@ void Client::redeem(const MyString& bankName, unsigned accountNumber, const MySt
 	int bankIndex = findbankAccountIndex(bankName, accountNumber);
 	if (bankIndex == -1)
 	{
-		throw std::exception("There is no such BankAccount");
+		throw std::invalid_argument("There is no such BankAccount");
 	}
 	int checkIndex = findCheckIndex(verificationCode);
 	if (checkIndex == -1)
 	{
-		throw std::exception("There is no such Check with this code");
+		throw std::invalid_argument("There is no such Check with this code");
 	}
 	bankAccounts[bankIndex].deposit(checks[checkIndex].getCash());
 	checks.popAt(checkIndex);

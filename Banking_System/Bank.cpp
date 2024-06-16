@@ -5,7 +5,7 @@ BankEmployee* Bank::findTheLeastEngagedEmployee()
 	unsigned size = bankEmployees.getSize();
 	if (size < 1)
 	{
-		throw std::exception("There is no employee!!");
+		throw std::invalid_argument("There is no employee!!");
 	}
 	BankEmployee* leastEngagedEmployee = bankEmployees[0];
 	int minTaskCount = bankEmployees[0]->getTaskCount();

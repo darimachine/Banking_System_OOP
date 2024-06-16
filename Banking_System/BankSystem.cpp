@@ -57,7 +57,7 @@ Bank& BankSystem::findBank(const MyString& bankName)
             return banks[i];
         }
     }
-    throw std::runtime_error("There is no such bank");
+    throw std::invalid_argument("There is no such bank");
     
 }
 
@@ -71,7 +71,7 @@ const Vector<Bank>& BankSystem::getBanks() const
     return banks;
 }
 
-const Vector<BankEmployee>& BankSystem::getBankEmployee() const
+const Vector<BankEmployee>& BankSystem::getBankEmployees() const
 {
     return bankEmployees;
 }
@@ -234,4 +234,9 @@ ExternalCompanyEmployee* BankSystem::getLoggedExternalEmployee()
 LoggedUserType BankSystem::getType() const
 {
     return loggedUserType;
+}
+
+void BankSystem::exit() const
+{
+    std::exit(0);
 }

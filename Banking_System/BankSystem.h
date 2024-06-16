@@ -35,7 +35,7 @@ public:
 
 	const Vector<Client>& getClients() const;
 	const Vector<Bank>& getBanks() const;
-	const Vector<BankEmployee>& getBankEmployee() const;
+	const Vector<BankEmployee>& getBankEmployees() const;
 
 	
 
@@ -61,7 +61,6 @@ public:
 
 	//get type
 	LoggedUserType getType() const;
-
 
 	void exit() const;
 

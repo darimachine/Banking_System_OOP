@@ -55,5 +55,12 @@ void HandleClientCommands::execute(BankSystem* app)
 	{
 		messagesCommand.execute(app);
 	}
+	else if (command == "exit")
+	{
+		app->logout();
+	}
+	else {
+		cout << "Unknown Command\n";
+	}
 
 }

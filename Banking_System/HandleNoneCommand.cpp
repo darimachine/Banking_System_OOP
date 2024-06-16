@@ -24,6 +24,10 @@ void HandleNoneCommand::execute(BankSystem* app)
 	{
 		loginCommand.execute(app);
 	}
+	else if (command == "exit")
+	{
+		app->exit();
+	}
 	else {
 		cout << "Unknown Command\n";
 	}

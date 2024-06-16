@@ -9,8 +9,13 @@ void OpenCommand::execute(BankSystem* app)
 		Bank b = app->findBank(bankName);
 		Task* task =client->open(bankName);
 		b.addTask(task);
+
 	}
-	catch (std::runtime_error er)
+	catch (std::invalid_argument er)
+	{
+		std::cout << er.what() << std::endl;
+	}
+	catch (std::exception er)
 	{
 		std::cout << er.what() << std::endl;
 	}

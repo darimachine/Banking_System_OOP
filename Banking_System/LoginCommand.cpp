@@ -11,6 +11,7 @@ void LoginCommand::execute(BankSystem* app)
 	std::cin >> password;
 	try {
 		app->login(name, password);
+		std::cout << "Login Sucesfull" << std::endl;
 	}
 	catch (std::runtime_error er)
 	{
