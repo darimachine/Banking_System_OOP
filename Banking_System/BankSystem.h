@@ -15,12 +15,15 @@ class BankSystem
 	Vector<Client> clients;
 	Vector<BankEmployee> bankEmployees;
 	Vector<ExternalCompanyEmployee> externalEmployees;
+	// WITHOUT DYNAMIC_CAST!!!!!!!!
+	Client* clientLogged = nullptr;
+	BankEmployee* bankEmployeeLogged = nullptr;
+	ExternalCompanyEmployee* externalEmployeeLogged = nullptr;
 
-	User* loggedUser = nullptr;
 	LoggedUserType loggedUserType = LoggedUserType::None;
 	BankSystem() = default;
 	BankSystem(const BankSystem&) = delete;
-	BankSystem& operator =(const BankSystem&) = delete;
+	BankSystem& operator=(const BankSystem&) = delete;
 	bool userAlreadyExistsCheck(User*);
 	bool bankAlreadyExistsCheck(const MyString& bankName);
 public:
@@ -42,11 +45,21 @@ public:
 	void logout();
 
 	const Vector<ExternalCompanyEmployee>& getExternalEmployees() const;
-	const User* getLoggedUser() const;
-	User* getLoggedUser();
+	// get loggedUSER
+	const Client* getLoggedClient() const;
+	Client* getLoggedClient();
+
+	const BankEmployee* getLoggedBankEmployee() const;
+	BankEmployee* getLoggedBankEmployee();
+
+	const ExternalCompanyEmployee* getLoggedExternalEmployee() const;
+	ExternalCompanyEmployee* getLoggedExternalEmployee();
+
+	//get type
 	LoggedUserType getType() const;
 
 
+	void exit() const;
 
 };
 

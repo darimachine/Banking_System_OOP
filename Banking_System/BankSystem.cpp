@@ -1,5 +1,6 @@
 #include "BankSystem.h"
-
+using std::cout;
+using std::endl;
 bool BankSystem::userAlreadyExistsCheck(User* user)
 {
 
@@ -118,7 +119,8 @@ void BankSystem::login(const MyString& username, const MyString& password)
         {
             if (clients[i].isValidPassword(password))
             {
-                loggedUser = &clients[i];
+                clientLogged = &clients[i];
+             
                 loggedUserType = LoggedUserType::Client;
                 return;
             }
@@ -131,8 +133,9 @@ void BankSystem::login(const MyString& username, const MyString& password)
         {
             if (bankEmployees[i].isValidPassword(password))
             {
-                loggedUser = &bankEmployees[i];
+                bankEmployeeLogged = &bankEmployees[i];
                 loggedUserType = LoggedUserType::BankEmployee;
+
                 return;
             }
             throw std::runtime_error("Wrong Password");
@@ -144,7 +147,7 @@ void BankSystem::login(const MyString& username, const MyString& password)
         {
             if (externalEmployees[i].isValidPassword(password))
             {
-                loggedUser = &externalEmployees[i];
+                externalEmployeeLogged = &externalEmployees[i];
                 loggedUserType = LoggedUserType::ExternalEmployee;
                 return;
             }
@@ -155,8 +158,36 @@ void BankSystem::login(const MyString& username, const MyString& password)
 
 void BankSystem::logout()
 {
-    loggedUser = nullptr;
-    loggedUserType = LoggedUserType::None;
+    switch (loggedUserType)
+    {   
+        case LoggedUserType::None:
+        {
+            cout << "Already logOuted\n";
+            break;
+        }
+        
+        case LoggedUserType::Client:
+        {
+            clientLogged = nullptr;
+            loggedUserType = LoggedUserType::None;
+            break;
+        }
+        
+        case LoggedUserType::BankEmployee: {
+            bankEmployeeLogged = nullptr;
+            loggedUserType = LoggedUserType::None;
+            break;
+        }
+       
+        case LoggedUserType::ExternalEmployee:
+        {
+            externalEmployeeLogged = nullptr;
+            loggedUserType = LoggedUserType::None;
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 const Vector<ExternalCompanyEmployee>& BankSystem::getExternalEmployees() const
@@ -164,15 +195,36 @@ const Vector<ExternalCompanyEmployee>& BankSystem::getExternalEmployees() const
     return externalEmployees;
 }
 
-const User* BankSystem::getLoggedUser() const
+const Client* BankSystem::getLoggedClient() const
 {
-    return loggedUser;
+    return clientLogged;
 }
 
-User* BankSystem::getLoggedUser()
+Client* BankSystem::getLoggedClient()
 {
-    return loggedUser;
+    return clientLogged;
 }
+
+const BankEmployee* BankSystem::getLoggedBankEmployee() const
+{
+    return bankEmployeeLogged;
+}
+
+BankEmployee* BankSystem::getLoggedBankEmployee()
+{
+    return bankEmployeeLogged;
+}
+
+const ExternalCompanyEmployee* BankSystem::getLoggedExternalEmployee() const
+{
+    return externalEmployeeLogged;
+}
+
+ExternalCompanyEmployee* BankSystem::getLoggedExternalEmployee()
+{
+    return externalEmployeeLogged;
+}
+
 
 LoggedUserType BankSystem::getType() const
 {
