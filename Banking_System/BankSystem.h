@@ -13,7 +13,7 @@ class BankSystem
 {
 	Vector<Bank> banks;
 	Vector<Client> clients;
-	Vector<BankEmployee> bankEmployees;
+	
 	Vector<ExternalCompanyEmployee> externalEmployees;
 	// WITHOUT DYNAMIC_CAST!!!!!!!!
 	Client* clientLogged = nullptr;
@@ -33,15 +33,17 @@ public:
 
 	Bank& findBank(const MyString& bankName);
 
+	Client& getClientByEgn(const MyString& egn);
+
 	const Vector<Client>& getClients() const;
 	const Vector<Bank>& getBanks() const;
-	const Vector<BankEmployee>& getBankEmployees() const;
+	
 
 	
 
-	void signUpBank(Bank&& bank);
+	void signUpBank(Bank& bank);
 	void signUpClient(Client&& client);
-	void signUpBankEmployee(BankEmployee&& bankEmployee);
+	void signUpBankEmployee(BankEmployee& bankEmployee);
 	void signUpExternalEmployee(ExternalCompanyEmployee&& externalEmployee);
 
 	void login(const MyString& username, const MyString& password);

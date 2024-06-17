@@ -29,7 +29,7 @@ void BankEmployee::showTasks() const
     unsigned size = tasks.getSize();
 	for (int i = 0; i < size; i++)
 	{
-		cout << "[" << i + 1 << "]";
+		cout << "[" << i + 1 << "]  ";
 		tasks[i]->viewMessage();
 		cout << endl;
 	}
@@ -49,36 +49,44 @@ void BankEmployee::removeTask(unsigned id)
 	tasks.popAt(id);
 }
 
-Task* BankEmployee::approve(unsigned taskID)
-{
-	if (!isValidTaskID(taskID))
-	{
-		throw std::invalid_argument("Task ID is Invalid");
-	}
-	Task* nextTask = tasks[taskID - 1]->finish(); // can be nullptr if is not then i must handle it outside
-	removeTask(taskID - 1);
-	return nextTask;
-}
 unsigned BankEmployee::getTaskCount() const {
 	return tasks.getSize();
 }
 
 void BankEmployee::disapprove(unsigned taskID, const MyString& message)
 {
-	MyString infiks = "Your ";
-	infiks+=tasks[taskID - 1]->getType();
-	infiks += " request was not approved. Reason: ";
-	infiks += message;
-	tasks[taskID - 1]->getClient().addMessage(infiks);
+	if (!isValidTaskID(taskID))
+	{
+		throw std::invalid_argument("Task ID is Invalid");
+	}
+	MyString info = "Your ";
+	info+=tasks[taskID - 1]->getType();
+	info += " request was not approved. Reason: ";
+	info += message;
+	tasks[taskID - 1]->getClient().addMessage(info);
 	removeTask(taskID - 1);
 
+}
+Task* BankEmployee::approve(unsigned taskID)
+{
+	if (!isValidTaskID(taskID))
+	{
+		throw std::invalid_argument("Task ID is Invalid");
+	}
+	Task* nextTask = tasks[taskID - 1]->finish();; // can be nullptr if is not then i must handle it outside
+	
+	if (tasks[taskID - 1]->getType() != "Change Not Validated")
+	{
+		removeTask(taskID - 1);
+	}
+	return nextTask;
 }
 
 Task* BankEmployee::validate(unsigned taskID)
 {
 	PolymorphicPtr<Task> currentTask = tasks[taskID - 1];
 	if (currentTask->getType() != "Change Not Validated") {
-		throw std::exception("You cannot validate this response");
+		throw std::invalid_argument("You cannot validate this response");
 	}
 	MyString oldBank = currentTask->getBankNameForChange();
 	unsigned accountID = currentTask->getBankNameIdChange();

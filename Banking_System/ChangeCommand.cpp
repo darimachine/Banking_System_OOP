@@ -12,7 +12,7 @@ void ChangeCommand::execute(BankSystem* app)
 	std::cin >> accountNumber;
 	Client* client = app->getLoggedClient();
 	try {
-		Bank newBank = app->findBank(newBankName);
+		Bank& newBank = app->findBank(newBankName);
 		Task* task = client->change(newBankName, oldBankName, accountNumber);
 		newBank.addTask(task);
 	}

@@ -33,7 +33,7 @@ Check::Check(const MyString& sender, const MyString& code, unsigned cashToSend, 
 {
     if (!isValidCode(code))
     {
-        throw std::exception("Invalid code");
+        throw std::invalid_argument("Invalid code");
     }
     uniqueCode = code;
 }

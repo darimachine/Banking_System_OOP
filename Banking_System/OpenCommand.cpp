@@ -6,7 +6,7 @@ void OpenCommand::execute(BankSystem* app)
 	std::cin >> bankName;
 	Client* client = app->getLoggedClient();
 	try {
-		Bank b = app->findBank(bankName);
+		Bank& b = app->findBank(bankName);
 		Task* task =client->open(bankName);
 		b.addTask(task);
 

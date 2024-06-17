@@ -16,7 +16,7 @@ ChangeAccountTaskApproved::ChangeAccountTaskApproved(const MyString& newBank, Cl
 void ChangeAccountTaskApproved::viewDetails() const
 {
 	
-	cout << type << "request from:\n";
+	cout << type << " request from:\n";
 	cout << "Name: " << client.getName() << endl;
 	cout << "EGN: " << client.getEGN() << endl;
 	cout << "Age: " << client.getAge() << endl;
@@ -31,6 +31,11 @@ void ChangeAccountTaskApproved::viewMessage() const
 	//[1] Change(approved) - Stancho wants to join Health_Savings_Accounts.
 }
 
+const MyString& ChangeAccountTaskApproved::getBankNameForChange() const
+{
+	return newBank;
+}
+
 Task* ChangeAccountTaskApproved::clone() const
 {
 	return new ChangeAccountTaskApproved(*this);
@@ -43,7 +48,7 @@ Task* ChangeAccountTaskApproved::finish()
 	Bill account(newBank, balance, id);
 	client.addBill(account);
 	client.removeBill(oldBank, accountID);
-	MyString tempMessage = "You changed your savings account to";
+	MyString tempMessage = "You changed your savings account to ";
 	tempMessage += newBank;
 	tempMessage += ". New account id is ";
 	char idStr[20];

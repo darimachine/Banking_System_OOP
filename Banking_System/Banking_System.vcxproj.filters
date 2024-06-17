@@ -233,15 +233,6 @@
     <ClInclude Include="BankEmployee.h">
       <Filter>Header Files\Users</Filter>
     </ClInclude>
-    <ClInclude Include="UniquePointer.hpp">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="SharedPtr.hpp">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="WeakPtr.hpp">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
     <ClInclude Include="IDGenerateParse.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>

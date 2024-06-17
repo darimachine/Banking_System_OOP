@@ -12,7 +12,7 @@ ChangeAccountTaskNoValidated::ChangeAccountTaskNoValidated(const MyString& newBa
 
 void ChangeAccountTaskNoValidated::viewDetails() const
 {
-	cout << type << "request from:\n";
+	cout << type << " request from:\n";
 	cout << "Name: " << client.getName() << endl;
 	cout << "EGN: " << client.getEGN() << endl;
 	cout << "Age: " << client.getAge() << endl;
@@ -32,7 +32,7 @@ Task* ChangeAccountTaskNoValidated::clone() const
 
 Task* ChangeAccountTaskNoValidated::finish()
 {
-	cout << "Cannot proceed - please make sure " << client.getName() << "is real user by asking the bank!\n";
+	cout << "Cannot proceed - please make sure " << client.getName() << " is real user by asking the bank!\n";
 	return nullptr;
 }
 

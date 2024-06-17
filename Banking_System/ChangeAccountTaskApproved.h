@@ -11,7 +11,7 @@ public:
 	void viewDetails() const override;
 	void viewMessage() const override;
 
-	
+	const MyString& getBankNameForChange() const override;
 	Task* clone() const override;
 
 	// Inherited via ChangeAccountTask

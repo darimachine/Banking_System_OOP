@@ -42,9 +42,20 @@ void HandleBankEmployeeCommands::execute(BankSystem* app)
 	else if (command == "exit")
 	{
 		app->logout();
+		std::cout << "Logged Out\n";
+	}
+	else if (command == "whoami")
+	{
+		app->getLoggedBankEmployee()->whoami();
+	}
+	else if (command == "help")
+	{
+		app->getLoggedBankEmployee()->help();
 	}
 	else {
 		cout << "Unknown Command\n";
+		cin.clear();
+		cin.ignore(1024, '\n');
 	}
 
 }

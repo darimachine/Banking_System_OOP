@@ -10,7 +10,7 @@ CloseAccountTask::CloseAccountTask(Client& client, const MyString& bank, unsigne
 void CloseAccountTask::viewDetails() const
 {
     int index = client.findbankAccountIndex(bank, accountID);
-    cout << type << "request from:\n";
+    cout << type << " request from:\n";
     cout << "Name: " << client.getName() << endl;
     cout << "EGN: " << client.getEGN() << endl;
     cout << "Age: " << client.getAge() << endl;
@@ -21,7 +21,7 @@ void CloseAccountTask::viewDetails() const
 
 void CloseAccountTask::viewMessage() const
 {
-    cout << type << " - " << client.getName() << " wants to close accoutn with id " << accountID << ".\n";
+    cout << type << " - " << client.getName() << " wants to close account with id " << accountID << ".\n";
     //[2] Close - Stancho wants to close account with id 2903.
 }
 

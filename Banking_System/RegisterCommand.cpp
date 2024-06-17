@@ -11,6 +11,7 @@ void RegisterCommand::execute(BankSystem* app)
 	MyString egn;
 	unsigned age;
 	MyString role;
+	char roleGet[1024];
 	MyString bankAssociated;
 	MyString password;
 
@@ -59,7 +60,7 @@ void RegisterCommand::execute(BankSystem* app)
 		
 		try {
 			BankEmployee bankEmployee(name, egn, age, password, bankAssociated);
-			app->signUpBankEmployee(std::move(bankEmployee));
+			app->signUpBankEmployee(bankEmployee);
 			cout << "Succesfully Registered\n";
 		}
 		catch (std::invalid_argument er)
@@ -76,7 +77,7 @@ void RegisterCommand::execute(BankSystem* app)
 		}
 
 	}
-	else if (role == "Third-party employee")
+	else if (role == "Third-partyEmployee")
 	{
 		cout << "Password: ";
 		cin >> password;

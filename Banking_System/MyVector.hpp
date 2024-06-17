@@ -44,6 +44,8 @@ public:
 	T popBack();
 	T popAt(size_t index);
 
+	
+
 	bool empty() const;
 	void clear();
 	void shrinkToFit();
@@ -212,6 +214,8 @@ T Vector<T>::popAt(size_t index) {
 
 	return temp;
 }
+
+
 
 template<typename T>
 bool Vector<T>::empty() const {

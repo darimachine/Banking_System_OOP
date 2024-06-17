@@ -7,22 +7,29 @@ bool BankSystem::userAlreadyExistsCheck(User* user)
     unsigned clientSize = clients.getSize();
     for (int i = 0; i < clientSize; i++)
     {
-        if (clients[i].getName() == user->getName()) {
-            throw std::runtime_error("User Already Exists");
+        if (clients[i].getName() == user->getName() || clients[i].getEGN() == user->getEGN()) {
+            throw std::invalid_argument("User Already Exists(Name or EGN are the Same)");
         }
     }
-    unsigned bankEmployeeSize = bankEmployees.getSize();
-    for (int i = 0; i < bankEmployeeSize; i++)
+    unsigned totalBanks = banks.getSize();
+    for (int i = 0; i < totalBanks; i++)
     {
-        if (bankEmployees[i].getName() == user->getName()) {
-            throw std::runtime_error("User Already Exists");
+        Vector<BankEmployee> employees = banks[i].getBankEmployees();
+        unsigned employeeSize = employees.getSize();
+        for (int i = 0; i < employeeSize; i++)
+        {
+            if (employees[i].getName() == user->getName() || employees[i].getEGN() == user->getEGN()) {
+                throw std::invalid_argument("User Already Exists(Name or EGN are the Same)");
+            }
         }
     }
+    
+  
     unsigned externalEmployeeSize = externalEmployees.getSize();
     for (int i = 0; i < externalEmployeeSize; i++)
     {
-        if (externalEmployees[i].getName() == user->getName()) {
-            throw std::runtime_error("User Already Exists");
+        if (externalEmployees[i].getName() == user->getName() || externalEmployees[i].getEGN() == user->getEGN()) {
+            throw std::invalid_argument("User Already Exists(Name or EGN are the Same)");
         }
     }
     return false;
@@ -53,12 +60,26 @@ Bank& BankSystem::findBank(const MyString& bankName)
     unsigned size = banks.getSize();
     for (int i = 0; i < size; i++)
     {
-        if (banks[i].getName() == bankName) {
+        if (banks[i].getName() == bankName) 
+        {
             return banks[i];
         }
     }
     throw std::invalid_argument("There is no such bank");
     
+}
+
+Client& BankSystem::getClientByEgn(const MyString& egn) 
+{
+    unsigned size = clients.getSize();
+    for (int i = 0; i < size; i++)
+    {
+        if (clients[i].getEGN() == egn)
+        {
+            return clients[i];
+        }
+    }
+    throw std::invalid_argument("Client with this EGN does not exist");
 }
 
 const Vector<Client>& BankSystem::getClients() const
@@ -71,18 +92,14 @@ const Vector<Bank>& BankSystem::getBanks() const
     return banks;
 }
 
-const Vector<BankEmployee>& BankSystem::getBankEmployees() const
-{
-    return bankEmployees;
-}
 
-void BankSystem::signUpBank(Bank&& bank)
+void BankSystem::signUpBank(Bank& bank)
 {
     
     if (bankAlreadyExistsCheck(bank.getName())) {
         throw std::invalid_argument("Bank Already Exists");
     }
-    banks.pushBack(std::move(bank));
+    banks.pushBack(bank);
     
     
 }
@@ -94,13 +111,15 @@ void BankSystem::signUpClient(Client&& client)
     clients.pushBack(std::move(client));
 }
 
-void BankSystem::signUpBankEmployee(BankEmployee&& bankEmployee)
+void BankSystem::signUpBankEmployee(BankEmployee& bankEmployee)
 {
     userAlreadyExistsCheck(&bankEmployee);
     if (!bankAlreadyExistsCheck(bankEmployee.getBankAssociated())) {
         throw std::invalid_argument("Bank Does Not Exists");
     }
-    bankEmployees.pushBack(std::move(bankEmployee));
+   
+    Bank& bank = findBank(bankEmployee.getBankAssociated());
+    bank.addEmployee(bankEmployee);
 }
 
 void BankSystem::signUpExternalEmployee(ExternalCompanyEmployee&& externalEmployee)
@@ -111,10 +130,28 @@ void BankSystem::signUpExternalEmployee(ExternalCompanyEmployee&& externalEmploy
 
 void BankSystem::login(const MyString& username, const MyString& password)
 {
+    unsigned bankSize = banks.getSize();
+    for (int i = 0; i < bankSize; i++)
+    {
+        Vector<BankEmployee>& employeess = banks[i].getBankEmployees();
+        unsigned size = employeess.getSize();
+        for (int i = 0; i < size; i++)
+        {
+            if (employeess[i].getName() == username)
+            {
+                if (employeess[i].isValidPassword(password))
+                {
+                    bankEmployeeLogged = &employeess[i];
+                    loggedUserType = LoggedUserType::BankEmployee;
+                    return;
+                }
+                throw std::runtime_error("Wrong Password");
+            }
+        }
+    }
     unsigned clientCount = clients.getSize();
-    unsigned bankEmployeeCount = bankEmployees.getSize();
     unsigned externalEmployeeCount = externalEmployees.getSize();
-    if (clientCount == 0 && bankEmployeeCount == 0 && externalEmployeeCount == 0)
+    if (clientCount == 0 && externalEmployeeCount == 0)
     {
         throw std::runtime_error("No users in the system!");
     }
@@ -127,20 +164,6 @@ void BankSystem::login(const MyString& username, const MyString& password)
                 clientLogged = &clients[i];
              
                 loggedUserType = LoggedUserType::Client;
-                return;
-            }
-            throw std::runtime_error("Wrong Password");
-        }
-    }
-    for (int i = 0; i < bankEmployeeCount; i++)
-    {
-        if (bankEmployees[i].getName() == username)
-        {
-            if (bankEmployees[i].isValidPassword(password))
-            {
-                bankEmployeeLogged = &bankEmployees[i];
-                loggedUserType = LoggedUserType::BankEmployee;
-
                 return;
             }
             throw std::runtime_error("Wrong Password");
@@ -217,6 +240,7 @@ const BankEmployee* BankSystem::getLoggedBankEmployee() const
 
 BankEmployee* BankSystem::getLoggedBankEmployee()
 {
+    
     return bankEmployeeLogged;
 }
 

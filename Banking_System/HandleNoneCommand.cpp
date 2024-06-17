@@ -30,6 +30,8 @@ void HandleNoneCommand::execute(BankSystem* app)
 	}
 	else {
 		cout << "Unknown Command\n";
+		cin.clear();
+		cin.ignore(1024, '\n');
 	}
 	
 	// if typed exit system.exit(0);

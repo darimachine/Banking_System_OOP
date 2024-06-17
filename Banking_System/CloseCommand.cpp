@@ -9,7 +9,7 @@ void CloseCommand::execute(BankSystem* app)
 	std::cin >> accountNumber;
 	Client* client = app->getLoggedClient();
 	try {
-		Bank b = app->findBank(bankName);
+		Bank& b = app->findBank(bankName);
 		Task* task = client->close(bankName, accountNumber);
 		b.addTask(task);
 	}

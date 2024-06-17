@@ -6,6 +6,7 @@
 #include "MessagesCommand.h"
 #include "OpenCommand.h"
 #include "RedeemCommand.h"
+
 using std::cin;
 using std::cout;
 using std::endl;
@@ -55,12 +56,19 @@ void HandleClientCommands::execute(BankSystem* app)
 	{
 		messagesCommand.execute(app);
 	}
+	else if (command == "help")
+	{
+		app->getLoggedClient()->help();
+	}
 	else if (command == "exit")
 	{
 		app->logout();
+		std::cout << "Logged Out\n";
 	}
 	else {
 		cout << "Unknown Command\n";
+		cin.clear();
+		cin.ignore(1024, '\n');
 	}
 
 }

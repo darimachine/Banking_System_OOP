@@ -6,7 +6,7 @@ void CreateBankCommand::execute(BankSystem* app)
 	std::cin >> bankName;
 	Bank bank(std::move(bankName));
 	try {
-		app->signUpBank(std::move(bank));
+		app->signUpBank(bank);
 		std::cout << "Bank Created Succesfully\n";
 	}
 	catch(std::runtime_error er)

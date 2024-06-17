@@ -206,17 +206,14 @@
     <ClInclude Include="RegisterCommand.h" />
     <ClInclude Include="RunCommand.h" />
     <ClInclude Include="SendCheckCommand.h" />
-    <ClInclude Include="SharedPtr.hpp" />
     <ClInclude Include="ShowTasksCommand.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="MyVector.hpp" />
     <ClInclude Include="PolyMorphic_Ptr.hpp" />
-    <ClInclude Include="UniquePointer.hpp" />
     <ClInclude Include="User.h" />
     <ClInclude Include="ValidateTaskCommand.h" />
     <ClInclude Include="ViewTaskCommand.h" />
-    <ClInclude Include="WeakPtr.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
