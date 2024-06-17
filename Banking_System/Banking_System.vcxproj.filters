@@ -72,29 +72,8 @@
     <ClCompile Include="BankSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Task.cpp">
-      <Filter>Source Files\Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="OpenAccountTask.cpp">
-      <Filter>Source Files\Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeAccountTaskNoValidated.cpp">
-      <Filter>Source Files\Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeAccountTaskValidated.cpp">
-      <Filter>Source Files\Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeAccountTask.cpp">
-      <Filter>Source Files\Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeAccountTaskApproved.cpp">
-      <Filter>Source Files\Tasks</Filter>
-    </ClCompile>
     <ClCompile Include="MyString.cpp">
       <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="CloseAccountTask.cpp">
-      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
     <ClCompile Include="User.cpp">
       <Filter>Source Files\Users</Filter>
@@ -179,6 +158,27 @@
     </ClCompile>
     <ClCompile Include="LogOutCommand.cpp">
       <Filter>Source Files\SystemCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeAccountTask.cpp">
+      <Filter>Source Files\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeAccountTaskApproved.cpp">
+      <Filter>Source Files\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeAccountTaskNoValidated.cpp">
+      <Filter>Source Files\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeAccountTaskValidated.cpp">
+      <Filter>Source Files\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>Source Files\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="CloseAccountTask.cpp">
+      <Filter>Source Files\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenAccountTask.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -17,5 +17,9 @@ void LoginCommand::execute(BankSystem* app)
 	{
 		std::cout << er.what() << std::endl;
 	}
+	catch (std::invalid_argument er)
+	{
+		std::cout << er.what() << std::endl;
+	}
 	
 }

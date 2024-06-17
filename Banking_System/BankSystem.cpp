@@ -182,6 +182,7 @@ void BankSystem::login(const MyString& username, const MyString& password)
             throw std::runtime_error("Wrong Password");
         }
     }
+    throw std::runtime_error("Wrong Username");
 }
 
 void BankSystem::logout()

@@ -164,9 +164,9 @@
     <ClCompile Include="RunCommand.cpp" />
     <ClCompile Include="SendCheckCommand.cpp" />
     <ClCompile Include="ShowTasksCommand.cpp" />
-    <ClCompile Include="Task.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="Task.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="ValidateTaskCommand.cpp" />
     <ClCompile Include="ViewTaskCommand.cpp" />
