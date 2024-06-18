@@ -37,6 +37,10 @@ void RunCommand::execute(BankSystem* app)
 			externalEmployeCommand.execute(app);
 			break;
 		}
+		case LoggedUserType::Exited:
+		{
+			return;
+		}
 		default:
 			break;
 		}

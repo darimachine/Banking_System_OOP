@@ -261,7 +261,7 @@ LoggedUserType BankSystem::getType() const
     return loggedUserType;
 }
 
-void BankSystem::exit() const
+void BankSystem::exit()
 {
-    std::exit(0);
+    loggedUserType = LoggedUserType::Exited;
 }

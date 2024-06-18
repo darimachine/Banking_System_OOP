@@ -7,7 +7,8 @@ enum class LoggedUserType {
 	None,
 	Client,
 	BankEmployee,
-	ExternalEmployee
+	ExternalEmployee,
+	Exited
 };
 class BankSystem
 {
@@ -64,7 +65,7 @@ public:
 	//get type
 	LoggedUserType getType() const;
 
-	void exit() const;
+	void exit();
 
 };
 
