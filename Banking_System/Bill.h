@@ -1,5 +1,5 @@
 #pragma once
-#include "MyString.h"
+#include "Utilities/MyString.h"
 class Bill
 {
 	

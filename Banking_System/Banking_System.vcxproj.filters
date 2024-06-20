@@ -72,113 +72,113 @@
     <ClCompile Include="BankSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyString.cpp">
-      <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="User.cpp">
-      <Filter>Source Files\Users</Filter>
-    </ClCompile>
-    <ClCompile Include="Client.cpp">
-      <Filter>Source Files\Users</Filter>
-    </ClCompile>
-    <ClCompile Include="BankEmployee.cpp">
-      <Filter>Source Files\Users</Filter>
-    </ClCompile>
-    <ClCompile Include="ExternalCompanyEmployee.cpp">
-      <Filter>Source Files\Users</Filter>
-    </ClCompile>
-    <ClCompile Include="IDGeneratedParse.cpp">
-      <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
     <ClCompile Include="Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RunCommand.cpp">
-      <Filter>Source Files\SystemCommands</Filter>
+    <ClCompile Include="Users\BankEmployee.cpp">
+      <Filter>Source Files\Users</Filter>
     </ClCompile>
-    <ClCompile Include="CheckAvlCommand.cpp">
-      <Filter>Source Files\ClientCommands</Filter>
+    <ClCompile Include="Users\Client.cpp">
+      <Filter>Source Files\Users</Filter>
     </ClCompile>
-    <ClCompile Include="OpenCommand.cpp">
-      <Filter>Source Files\ClientCommands</Filter>
+    <ClCompile Include="Users\ExternalCompanyEmployee.cpp">
+      <Filter>Source Files\Users</Filter>
     </ClCompile>
-    <ClCompile Include="CloseCommand.cpp">
-      <Filter>Source Files\ClientCommands</Filter>
+    <ClCompile Include="Users\User.cpp">
+      <Filter>Source Files\Users</Filter>
     </ClCompile>
-    <ClCompile Include="RedeemCommand.cpp">
-      <Filter>Source Files\ClientCommands</Filter>
+    <ClCompile Include="Utilities\IDGeneratedParse.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="ChangeCommand.cpp">
-      <Filter>Source Files\ClientCommands</Filter>
+    <ClCompile Include="Utilities\MyString.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="ListCommand.cpp">
-      <Filter>Source Files\ClientCommands</Filter>
+    <ClCompile Include="Tasks\ChangeAccountTask.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
-    <ClCompile Include="MessagesCommand.cpp">
-      <Filter>Source Files\ClientCommands</Filter>
+    <ClCompile Include="Tasks\ChangeAccountTaskApproved.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
-    <ClCompile Include="CreateBankCommand.cpp">
-      <Filter>Source Files\SystemCommands</Filter>
+    <ClCompile Include="Tasks\ChangeAccountTaskNoValidated.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
-    <ClCompile Include="LoginCommand.cpp">
-      <Filter>Source Files\SystemCommands</Filter>
+    <ClCompile Include="Tasks\ChangeAccountTaskValidated.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
-    <ClCompile Include="RegisterCommand.cpp">
-      <Filter>Source Files\SystemCommands</Filter>
+    <ClCompile Include="Tasks\CloseAccountTask.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
-    <ClCompile Include="ShowTasksCommand.cpp">
-      <Filter>Source Files\BankEmployeeComands</Filter>
+    <ClCompile Include="Tasks\OpenAccountTask.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
-    <ClCompile Include="ViewTaskCommand.cpp">
-      <Filter>Source Files\BankEmployeeComands</Filter>
+    <ClCompile Include="Tasks\Task.cpp">
+      <Filter>Source Files\Tasks</Filter>
     </ClCompile>
-    <ClCompile Include="ApproveCommand.cpp">
-      <Filter>Source Files\BankEmployeeComands</Filter>
-    </ClCompile>
-    <ClCompile Include="DisapproveCommand.cpp">
-      <Filter>Source Files\BankEmployeeComands</Filter>
-    </ClCompile>
-    <ClCompile Include="ValidateTaskCommand.cpp">
-      <Filter>Source Files\BankEmployeeComands</Filter>
-    </ClCompile>
-    <ClCompile Include="SendCheckCommand.cpp">
+    <ClCompile Include="ExternalEmployeesCommands\SendCheckCommand.cpp">
       <Filter>Source Files\ExternalEmployeesComand</Filter>
     </ClCompile>
-    <ClCompile Include="HandleClientCommands.cpp">
+    <ClCompile Include="SystemCommands\CreateBankCommand.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="HandleBankEmployeeCommands.cpp">
+    <ClCompile Include="SystemCommands\HandleBankEmployeeCommands.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="HandleExternalEmployeeCommand.cpp">
+    <ClCompile Include="SystemCommands\HandleClientCommands.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="HandleNoneCommand.cpp">
+    <ClCompile Include="SystemCommands\HandleExternalEmployeeCommand.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="LogOutCommand.cpp">
+    <ClCompile Include="SystemCommands\HandleNoneCommand.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="ChangeAccountTask.cpp">
-      <Filter>Source Files\Tasks</Filter>
+    <ClCompile Include="SystemCommands\LoginCommand.cpp">
+      <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="ChangeAccountTaskApproved.cpp">
-      <Filter>Source Files\Tasks</Filter>
+    <ClCompile Include="SystemCommands\LogOutCommand.cpp">
+      <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="ChangeAccountTaskNoValidated.cpp">
-      <Filter>Source Files\Tasks</Filter>
+    <ClCompile Include="SystemCommands\RegisterCommand.cpp">
+      <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="ChangeAccountTaskValidated.cpp">
-      <Filter>Source Files\Tasks</Filter>
+    <ClCompile Include="SystemCommands\RunCommand.cpp">
+      <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="Task.cpp">
-      <Filter>Source Files\Tasks</Filter>
+    <ClCompile Include="ClientCommands\ChangeCommand.cpp">
+      <Filter>Source Files\ClientCommands</Filter>
     </ClCompile>
-    <ClCompile Include="CloseAccountTask.cpp">
-      <Filter>Source Files\Tasks</Filter>
+    <ClCompile Include="ClientCommands\CheckAvlCommand.cpp">
+      <Filter>Source Files\ClientCommands</Filter>
     </ClCompile>
-    <ClCompile Include="OpenAccountTask.cpp">
-      <Filter>Source Files\Tasks</Filter>
+    <ClCompile Include="ClientCommands\CloseCommand.cpp">
+      <Filter>Source Files\ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommands\ListCommand.cpp">
+      <Filter>Source Files\ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommands\MessagesCommand.cpp">
+      <Filter>Source Files\ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommands\OpenCommand.cpp">
+      <Filter>Source Files\ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCommands\RedeemCommand.cpp">
+      <Filter>Source Files\ClientCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEmployeeCommands\ApproveCommand.cpp">
+      <Filter>Source Files\BankEmployeeComands</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEmployeeCommands\DisapproveCommand.cpp">
+      <Filter>Source Files\BankEmployeeComands</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEmployeeCommands\ShowTasksCommand.cpp">
+      <Filter>Source Files\BankEmployeeComands</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEmployeeCommands\ValidateTaskCommand.cpp">
+      <Filter>Source Files\BankEmployeeComands</Filter>
+    </ClCompile>
+    <ClCompile Include="BankEmployeeCommands\ViewTaskCommand.cpp">
+      <Filter>Source Files\BankEmployeeComands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,119 +194,119 @@
     <ClInclude Include="BankSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Task.h">
-      <Filter>Header Files\Tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="OpenAccountTask.h">
-      <Filter>Header Files\Tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="ChangeAccountTaskNoValidated.h">
-      <Filter>Header Files\Tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="ChangeAccountTaskValidated.h">
-      <Filter>Header Files\Tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="ChangeAccountTask.h">
-      <Filter>Header Files\Tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="ChangeAccountTaskApproved.h">
-      <Filter>Header Files\Tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="MyVector.hpp">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="PolyMorphic_Ptr.hpp">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="MyString.h">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="CloseAccountTask.h">
-      <Filter>Header Files\Tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
-      <Filter>Header Files\Users</Filter>
-    </ClInclude>
-    <ClInclude Include="Client.h">
-      <Filter>Header Files\Users</Filter>
-    </ClInclude>
-    <ClInclude Include="BankEmployee.h">
-      <Filter>Header Files\Users</Filter>
-    </ClInclude>
-    <ClInclude Include="IDGenerateParse.h">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="ExternalCompanyEmployee.h">
-      <Filter>Header Files\Users</Filter>
-    </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RunCommand.h">
-      <Filter>Header Files\SystemCommands</Filter>
+    <ClInclude Include="Users\BankEmployee.h">
+      <Filter>Header Files\Users</Filter>
     </ClInclude>
-    <ClInclude Include="CheckAvlCommand.h">
-      <Filter>Header Files\ClientCommands</Filter>
+    <ClInclude Include="Users\Client.h">
+      <Filter>Header Files\Users</Filter>
     </ClInclude>
-    <ClInclude Include="OpenCommand.h">
-      <Filter>Header Files\ClientCommands</Filter>
+    <ClInclude Include="Users\ExternalCompanyEmployee.h">
+      <Filter>Header Files\Users</Filter>
     </ClInclude>
-    <ClInclude Include="CloseCommand.h">
-      <Filter>Header Files\ClientCommands</Filter>
+    <ClInclude Include="Users\User.h">
+      <Filter>Header Files\Users</Filter>
     </ClInclude>
-    <ClInclude Include="RedeemCommand.h">
-      <Filter>Header Files\ClientCommands</Filter>
+    <ClInclude Include="Utilities\IDGenerateParse.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="ChangeCommand.h">
-      <Filter>Header Files\ClientCommands</Filter>
+    <ClInclude Include="Utilities\MyString.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="ListCommand.h">
-      <Filter>Header Files\ClientCommands</Filter>
+    <ClInclude Include="Utilities\MyVector.hpp">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="MessagesCommand.h">
-      <Filter>Header Files\ClientCommands</Filter>
+    <ClInclude Include="Utilities\PolyMorphic_Ptr.hpp">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="CreateBankCommand.h">
-      <Filter>Header Files\SystemCommands</Filter>
+    <ClInclude Include="Tasks\ChangeAccountTask.h">
+      <Filter>Header Files\Tasks</Filter>
     </ClInclude>
-    <ClInclude Include="LoginCommand.h">
-      <Filter>Header Files\SystemCommands</Filter>
+    <ClInclude Include="Tasks\ChangeAccountTaskApproved.h">
+      <Filter>Header Files\Tasks</Filter>
     </ClInclude>
-    <ClInclude Include="RegisterCommand.h">
-      <Filter>Header Files\SystemCommands</Filter>
+    <ClInclude Include="Tasks\ChangeAccountTaskNoValidated.h">
+      <Filter>Header Files\Tasks</Filter>
     </ClInclude>
-    <ClInclude Include="ShowTasksCommand.h">
-      <Filter>Header Files\BankEmployeeComands</Filter>
+    <ClInclude Include="Tasks\ChangeAccountTaskValidated.h">
+      <Filter>Header Files\Tasks</Filter>
     </ClInclude>
-    <ClInclude Include="ViewTaskCommand.h">
-      <Filter>Header Files\BankEmployeeComands</Filter>
+    <ClInclude Include="Tasks\CloseAccountTask.h">
+      <Filter>Header Files\Tasks</Filter>
     </ClInclude>
-    <ClInclude Include="ApproveCommand.h">
-      <Filter>Header Files\BankEmployeeComands</Filter>
+    <ClInclude Include="Tasks\OpenAccountTask.h">
+      <Filter>Header Files\Tasks</Filter>
     </ClInclude>
-    <ClInclude Include="DisapproveCommand.h">
-      <Filter>Header Files\BankEmployeeComands</Filter>
+    <ClInclude Include="Tasks\Task.h">
+      <Filter>Header Files\Tasks</Filter>
     </ClInclude>
-    <ClInclude Include="ValidateTaskCommand.h">
-      <Filter>Header Files\BankEmployeeComands</Filter>
-    </ClInclude>
-    <ClInclude Include="SendCheckCommand.h">
+    <ClInclude Include="ExternalEmployeesCommands\SendCheckCommand.h">
       <Filter>Header Files\ExternalEmployeeComands</Filter>
     </ClInclude>
-    <ClInclude Include="HandleClientCommands.h">
+    <ClInclude Include="SystemCommands\CreateBankCommand.h">
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
-    <ClInclude Include="HandleBankEmployeeCommands.h">
+    <ClInclude Include="SystemCommands\HandleBankEmployeeCommands.h">
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
-    <ClInclude Include="HandleExternalEmployeeCommand.h">
+    <ClInclude Include="SystemCommands\HandleClientCommands.h">
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
-    <ClInclude Include="HandleNoneCommand.h">
+    <ClInclude Include="SystemCommands\HandleExternalEmployeeCommand.h">
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
-    <ClInclude Include="LogOutCommand.h">
+    <ClInclude Include="SystemCommands\HandleNoneCommand.h">
       <Filter>Header Files\SystemCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemCommands\LoginCommand.h">
+      <Filter>Header Files\SystemCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemCommands\LogOutCommand.h">
+      <Filter>Header Files\SystemCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemCommands\RegisterCommand.h">
+      <Filter>Header Files\SystemCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemCommands\RunCommand.h">
+      <Filter>Header Files\SystemCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommands\ChangeCommand.h">
+      <Filter>Header Files\ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommands\CheckAvlCommand.h">
+      <Filter>Header Files\ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommands\CloseCommand.h">
+      <Filter>Header Files\ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommands\ListCommand.h">
+      <Filter>Header Files\ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommands\MessagesCommand.h">
+      <Filter>Header Files\ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommands\OpenCommand.h">
+      <Filter>Header Files\ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommands\RedeemCommand.h">
+      <Filter>Header Files\ClientCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEmployeeCommands\ApproveCommand.h">
+      <Filter>Header Files\BankEmployeeComands</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEmployeeCommands\DisapproveCommand.h">
+      <Filter>Header Files\BankEmployeeComands</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEmployeeCommands\ShowTasksCommand.h">
+      <Filter>Header Files\BankEmployeeComands</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEmployeeCommands\ValidateTaskCommand.h">
+      <Filter>Header Files\BankEmployeeComands</Filter>
+    </ClInclude>
+    <ClInclude Include="BankEmployeeCommands\ViewTaskCommand.h">
+      <Filter>Header Files\BankEmployeeComands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

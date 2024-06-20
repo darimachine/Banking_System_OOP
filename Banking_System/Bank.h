@@ -1,9 +1,9 @@
 #pragma once
-#include "MyVector.hpp"
-#include "Task.h"
-#include "BankEmployee.h"
+#include "Utilities/MyVector.hpp"
+#include "Tasks/Task.h"
+#include "Users/BankEmployee.h"
 
-#include "PolyMorphic_Ptr.hpp"
+#include "Utilities/PolyMorphic_Ptr.hpp"
 class Bank
 {
 	MyString name;

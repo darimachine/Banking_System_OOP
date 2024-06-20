@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExternalIncludePath>C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Users;$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -127,93 +130,93 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ApproveCommand.cpp" />
     <ClCompile Include="Bank.cpp" />
-    <ClCompile Include="BankEmployee.cpp" />
+    <ClCompile Include="BankEmployeeCommands\ApproveCommand.cpp" />
+    <ClCompile Include="BankEmployeeCommands\DisapproveCommand.cpp" />
+    <ClCompile Include="BankEmployeeCommands\ShowTasksCommand.cpp" />
+    <ClCompile Include="BankEmployeeCommands\ValidateTaskCommand.cpp" />
+    <ClCompile Include="BankEmployeeCommands\ViewTaskCommand.cpp" />
     <ClCompile Include="BankSystem.cpp" />
     <ClCompile Include="Bill.cpp" />
-    <ClCompile Include="ChangeAccountTask.cpp" />
-    <ClCompile Include="ChangeAccountTaskApproved.cpp" />
-    <ClCompile Include="ChangeAccountTaskNoValidated.cpp" />
-    <ClCompile Include="ChangeAccountTaskValidated.cpp" />
-    <ClCompile Include="ChangeCommand.cpp" />
     <ClCompile Include="Check.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_DEBUG;_CONSOLE;%(PreprocessorDefinitions) _CRT_SESCURE_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="CheckAvlCommand.cpp" />
-    <ClCompile Include="Client.cpp" />
-    <ClCompile Include="CloseAccountTask.cpp" />
-    <ClCompile Include="CloseCommand.cpp" />
+    <ClCompile Include="ClientCommands\ChangeCommand.cpp" />
+    <ClCompile Include="ClientCommands\CheckAvlCommand.cpp" />
+    <ClCompile Include="ClientCommands\CloseCommand.cpp" />
+    <ClCompile Include="ClientCommands\ListCommand.cpp" />
+    <ClCompile Include="ClientCommands\MessagesCommand.cpp" />
+    <ClCompile Include="ClientCommands\OpenCommand.cpp" />
+    <ClCompile Include="ClientCommands\RedeemCommand.cpp" />
     <ClCompile Include="Command.cpp" />
-    <ClCompile Include="CreateBankCommand.cpp" />
-    <ClCompile Include="DisapproveCommand.cpp" />
-    <ClCompile Include="ExternalCompanyEmployee.cpp" />
-    <ClCompile Include="HandleBankEmployeeCommands.cpp" />
-    <ClCompile Include="HandleClientCommands.cpp" />
-    <ClCompile Include="HandleExternalEmployeeCommand.cpp" />
-    <ClCompile Include="HandleNoneCommand.cpp" />
-    <ClCompile Include="IDGeneratedParse.cpp" />
-    <ClCompile Include="ListCommand.cpp" />
-    <ClCompile Include="LoginCommand.cpp" />
-    <ClCompile Include="LogOutCommand.cpp" />
-    <ClCompile Include="MessagesCommand.cpp" />
-    <ClCompile Include="OpenAccountTask.cpp" />
-    <ClCompile Include="OpenCommand.cpp" />
-    <ClCompile Include="RedeemCommand.cpp" />
-    <ClCompile Include="RegisterCommand.cpp" />
-    <ClCompile Include="RunCommand.cpp" />
-    <ClCompile Include="SendCheckCommand.cpp" />
-    <ClCompile Include="ShowTasksCommand.cpp" />
+    <ClCompile Include="ExternalEmployeesCommands\SendCheckCommand.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyString.cpp" />
-    <ClCompile Include="Task.cpp" />
-    <ClCompile Include="User.cpp" />
-    <ClCompile Include="ValidateTaskCommand.cpp" />
-    <ClCompile Include="ViewTaskCommand.cpp" />
+    <ClCompile Include="SystemCommands\CreateBankCommand.cpp" />
+    <ClCompile Include="SystemCommands\HandleBankEmployeeCommands.cpp" />
+    <ClCompile Include="SystemCommands\HandleClientCommands.cpp" />
+    <ClCompile Include="SystemCommands\HandleExternalEmployeeCommand.cpp" />
+    <ClCompile Include="SystemCommands\HandleNoneCommand.cpp" />
+    <ClCompile Include="SystemCommands\LoginCommand.cpp" />
+    <ClCompile Include="SystemCommands\LogOutCommand.cpp" />
+    <ClCompile Include="SystemCommands\RegisterCommand.cpp" />
+    <ClCompile Include="SystemCommands\RunCommand.cpp" />
+    <ClCompile Include="Tasks\ChangeAccountTask.cpp" />
+    <ClCompile Include="Tasks\ChangeAccountTaskApproved.cpp" />
+    <ClCompile Include="Tasks\ChangeAccountTaskNoValidated.cpp" />
+    <ClCompile Include="Tasks\ChangeAccountTaskValidated.cpp" />
+    <ClCompile Include="Tasks\CloseAccountTask.cpp" />
+    <ClCompile Include="Tasks\OpenAccountTask.cpp" />
+    <ClCompile Include="Tasks\Task.cpp" />
+    <ClCompile Include="Users\BankEmployee.cpp" />
+    <ClCompile Include="Users\Client.cpp" />
+    <ClCompile Include="Users\ExternalCompanyEmployee.cpp" />
+    <ClCompile Include="Users\User.cpp" />
+    <ClCompile Include="Utilities\IDGeneratedParse.cpp" />
+    <ClCompile Include="Utilities\MyString.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ApproveCommand.h" />
     <ClInclude Include="Bank.h" />
-    <ClInclude Include="BankEmployee.h" />
+    <ClInclude Include="BankEmployeeCommands\ApproveCommand.h" />
+    <ClInclude Include="BankEmployeeCommands\DisapproveCommand.h" />
+    <ClInclude Include="BankEmployeeCommands\ShowTasksCommand.h" />
+    <ClInclude Include="BankEmployeeCommands\ValidateTaskCommand.h" />
+    <ClInclude Include="BankEmployeeCommands\ViewTaskCommand.h" />
     <ClInclude Include="BankSystem.h" />
     <ClInclude Include="Bill.h" />
-    <ClInclude Include="ChangeAccountTask.h" />
-    <ClInclude Include="ChangeAccountTaskApproved.h" />
-    <ClInclude Include="ChangeAccountTaskNoValidated.h" />
-    <ClInclude Include="ChangeAccountTaskValidated.h" />
-    <ClInclude Include="ChangeCommand.h" />
     <ClInclude Include="Check.h" />
-    <ClInclude Include="CheckAvlCommand.h" />
-    <ClInclude Include="Client.h" />
-    <ClInclude Include="CloseAccountTask.h" />
-    <ClInclude Include="CloseCommand.h" />
+    <ClInclude Include="ClientCommands\ChangeCommand.h" />
+    <ClInclude Include="ClientCommands\CheckAvlCommand.h" />
+    <ClInclude Include="ClientCommands\CloseCommand.h" />
+    <ClInclude Include="ClientCommands\ListCommand.h" />
+    <ClInclude Include="ClientCommands\MessagesCommand.h" />
+    <ClInclude Include="ClientCommands\OpenCommand.h" />
+    <ClInclude Include="ClientCommands\RedeemCommand.h" />
     <ClInclude Include="Command.h" />
-    <ClInclude Include="CreateBankCommand.h" />
-    <ClInclude Include="DisapproveCommand.h" />
-    <ClInclude Include="ExternalCompanyEmployee.h" />
-    <ClInclude Include="HandleBankEmployeeCommands.h" />
-    <ClInclude Include="HandleClientCommands.h" />
-    <ClInclude Include="HandleExternalEmployeeCommand.h" />
-    <ClInclude Include="HandleNoneCommand.h" />
-    <ClInclude Include="IDGenerateParse.h" />
-    <ClInclude Include="ListCommand.h" />
-    <ClInclude Include="LoginCommand.h" />
-    <ClInclude Include="LogOutCommand.h" />
-    <ClInclude Include="MessagesCommand.h" />
-    <ClInclude Include="OpenAccountTask.h" />
-    <ClInclude Include="OpenCommand.h" />
-    <ClInclude Include="RedeemCommand.h" />
-    <ClInclude Include="RegisterCommand.h" />
-    <ClInclude Include="RunCommand.h" />
-    <ClInclude Include="SendCheckCommand.h" />
-    <ClInclude Include="ShowTasksCommand.h" />
-    <ClInclude Include="Task.h" />
-    <ClInclude Include="MyString.h" />
-    <ClInclude Include="MyVector.hpp" />
-    <ClInclude Include="PolyMorphic_Ptr.hpp" />
-    <ClInclude Include="User.h" />
-    <ClInclude Include="ValidateTaskCommand.h" />
-    <ClInclude Include="ViewTaskCommand.h" />
+    <ClInclude Include="ExternalEmployeesCommands\SendCheckCommand.h" />
+    <ClInclude Include="SystemCommands\CreateBankCommand.h" />
+    <ClInclude Include="SystemCommands\HandleBankEmployeeCommands.h" />
+    <ClInclude Include="SystemCommands\HandleClientCommands.h" />
+    <ClInclude Include="SystemCommands\HandleExternalEmployeeCommand.h" />
+    <ClInclude Include="SystemCommands\HandleNoneCommand.h" />
+    <ClInclude Include="SystemCommands\LoginCommand.h" />
+    <ClInclude Include="SystemCommands\LogOutCommand.h" />
+    <ClInclude Include="SystemCommands\RegisterCommand.h" />
+    <ClInclude Include="SystemCommands\RunCommand.h" />
+    <ClInclude Include="Tasks\ChangeAccountTask.h" />
+    <ClInclude Include="Tasks\ChangeAccountTaskApproved.h" />
+    <ClInclude Include="Tasks\ChangeAccountTaskNoValidated.h" />
+    <ClInclude Include="Tasks\ChangeAccountTaskValidated.h" />
+    <ClInclude Include="Tasks\CloseAccountTask.h" />
+    <ClInclude Include="Tasks\OpenAccountTask.h" />
+    <ClInclude Include="Tasks\Task.h" />
+    <ClInclude Include="Users\BankEmployee.h" />
+    <ClInclude Include="Users\Client.h" />
+    <ClInclude Include="Users\ExternalCompanyEmployee.h" />
+    <ClInclude Include="Users\User.h" />
+    <ClInclude Include="Utilities\IDGenerateParse.h" />
+    <ClInclude Include="Utilities\MyString.h" />
+    <ClInclude Include="Utilities\MyVector.hpp" />
+    <ClInclude Include="Utilities\PolyMorphic_Ptr.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

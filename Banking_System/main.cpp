@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "BankSystem.h"
-#include "RunCommand.h"
+#include "SystemCommands/RunCommand.h"
 
 
 using std::cout;
