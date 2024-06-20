@@ -148,7 +148,6 @@
     <ClCompile Include="ClientCommands\MessagesCommand.cpp" />
     <ClCompile Include="ClientCommands\OpenCommand.cpp" />
     <ClCompile Include="ClientCommands\RedeemCommand.cpp" />
-    <ClCompile Include="Command.cpp" />
     <ClCompile Include="ExternalEmployeesCommands\SendCheckCommand.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SystemCommands\CreateBankCommand.cpp" />

@@ -72,9 +72,6 @@
     <ClCompile Include="BankSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Command.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Users\BankEmployee.cpp">
       <Filter>Source Files\Users</Filter>
     </ClCompile>
