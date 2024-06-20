@@ -191,9 +191,6 @@
     <ClInclude Include="BankSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Command.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Users\BankEmployee.h">
       <Filter>Header Files\Users</Filter>
     </ClInclude>
@@ -304,6 +301,9 @@
     </ClInclude>
     <ClInclude Include="BankEmployeeCommands\ViewTaskCommand.h">
       <Filter>Header Files\BankEmployeeComands</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
