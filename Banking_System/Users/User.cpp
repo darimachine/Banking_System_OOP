@@ -1,4 +1,5 @@
 #include "User.h"
+
 int User::EGN_MAX_CHAR = 10;
 int User::MAX_AGE = 150;
 using std::cout;
@@ -97,6 +98,19 @@ void User::help()
 const MyString& User::getEGN() const
 {
 	return EGN;
+}
+void User::saveToFile(std::ofstream& ofs) const {
+	name.saveToFile(ofs);
+	EGN.saveToFile(ofs);
+	ofs.write((const char*)&age, sizeof(age));
+	password.saveToFile(ofs);
+
+}
+void User::readFromFiile(std::ifstream& ifs) {
+	name.readFromFile(ifs);
+	EGN.readFromFile(ifs);
+	ifs.read((char*)&age, sizeof(age));
+	password.readFromFile(ifs);
 }
 
 

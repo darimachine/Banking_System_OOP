@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ExternalIncludePath>C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Users;$(ExternalIncludePath)</ExternalIncludePath>
-    <SourcePath>C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Utilities;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Users;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Tasks;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\SystemCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\ExternalEmployeesCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\ClientCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\BankEmployeeCommands;$(SourcePath)</SourcePath>
+    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Utilities;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Users;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Tasks;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\SystemCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\ExternalEmployeesCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\ClientCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\BankEmployeeCommands;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\SystemCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\ExternalEmployeesCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Utilities;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Tasks;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\ClientCommands;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\Users;C:\Users\Аз\Documents\OOP\Begining-1_OOP\Banking_System\Banking_System\BankEmployeeCommands;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,6 +1,6 @@
 #include "MyString.h"
 #include <cstring>
-
+#include <fstream>
 #pragma warning (disable : 4996)
 
 
@@ -189,6 +189,20 @@ MyString MyString::substr(size_t begin, size_t howMany) const
 	MyString res(howMany + 1);
 	strncat(res._data, _data + begin, howMany);
 	return res;
+}
+
+void MyString::saveToFile(std::ofstream& ofs) const
+{
+	ofs.write((const char*)&_size, sizeof(_size));
+	ofs.write(_data, _size + 1);
+}
+
+void MyString::readFromFile(std::ifstream& ifs)
+{
+	free();
+	ifs.read((char*)_size, sizeof(_size));
+	_data = new char[_size + 1];
+	ifs.read(_data, _size + 1);
 }
 
 

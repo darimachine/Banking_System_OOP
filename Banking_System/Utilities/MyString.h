@@ -32,6 +32,9 @@ public:
 
     MyString substr(size_t begin, size_t howMany) const;
 
+    void saveToFile(std::ofstream& ofs) const;
+    void readFromFile(std::ifstream& ifs);
+
 private:
     explicit MyString(size_t stringLength);
     void resize(unsigned newAllocatedDataSize);

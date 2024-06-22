@@ -12,6 +12,7 @@ void CreateBankCommand::execute(BankSystem* app)
 	catch(std::runtime_error er)
 	{
 		std::cout << er.what() << std::endl;
+		
 	}
 	
 }

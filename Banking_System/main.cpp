@@ -14,6 +14,7 @@ int main()
     std::srand((std::time(0)));
     BankSystem* app = &BankSystem::getInstance();
     RunCommand run;
+   
     run.execute(app);
     
 }

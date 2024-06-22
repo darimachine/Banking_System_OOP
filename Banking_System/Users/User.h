@@ -2,6 +2,7 @@
 #include "../Utilities/MyString.h"
 #include "../Utilities/MyVector.hpp"
 #include "../Check.h"
+#include <fstream>
 class User
 {
 	static int EGN_MAX_CHAR;
@@ -29,7 +30,9 @@ public:
 	unsigned getAge() const;
 	const MyString& getEGN() const;
 
-	
+	void saveToFile(std::ofstream& ofs) const;
+
+	void readFromFiile(std::ifstream& ifs);
 	
 	void exit() const;
 	void whoami() const;
