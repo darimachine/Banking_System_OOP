@@ -28,6 +28,10 @@ void HandleExternalEmployeeCommand::execute(BankSystem* app)
 		app->save();
 		app->exit();
 	}
+	else if (command == "load")
+	{
+		app->load();
+	}
 	else {
 		std::cout << "Unknown Command\n";
 		cin.clear();

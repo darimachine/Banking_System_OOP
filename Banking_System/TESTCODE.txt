@@ -1,0 +1,66 @@
+create_bank Eg
+create_bank Hg
+
+signup
+Yoncho
+1234567890
+23
+Employee
+Eg
+123
+
+signup
+Stancho
+1234567891
+32
+Client
+123
+
+signup
+Nikola
+1234567892
+29
+Employee
+Hg
+123
+
+signup
+Plamena
+1234567893
+19
+Third-party Employee
+123
+
+login
+Plamena
+123
+
+whoami
+
+send_check 150.00 agd 1234567891
+exit
+
+login
+Stancho
+123
+open Eg
+exit
+
+login
+Yoncho
+123
+
+tasks
+
+view 1
+
+approve 1
+exit
+
+login
+Stancho
+123
+
+messages
+
+list Eg
