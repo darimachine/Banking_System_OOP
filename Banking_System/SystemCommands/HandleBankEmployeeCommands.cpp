@@ -75,7 +75,14 @@ void HandleBankEmployeeCommands::execute(BankSystem* app)
 	{
 		cout << er.what() << endl;
 	}
-
+	catch (std::exception& er)
+	{
+		cout << er.what() << endl;
+	}
+	catch (...)
+	{
+		cout << "Unknown Error\n";
+	}
 	
 
 }

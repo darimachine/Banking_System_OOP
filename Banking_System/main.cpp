@@ -3,14 +3,14 @@
 
 #include "BankSystem.h"
 #include "SystemCommands/RunCommand.h"
-
+//#include <crtdbg.h>
 
 using std::cout;
 using std::endl;
 int main()
 {
-  /*  _CrtDumpMemoryLeaks();
-    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);*/
+    //_CrtDumpMemoryLeaks();
+    //_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     std::srand((std::time(0)));
     BankSystem* app = &BankSystem::getInstance();
     RunCommand run;
