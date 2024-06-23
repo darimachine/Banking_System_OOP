@@ -11,10 +11,13 @@ public:
 	void viewDetails() const override;
 	void viewMessage() const override;
 
-	const MyString& getCurrentBankName() const override;
+	
 	Task* clone() const override;
 
 	// Inherited via ChangeAccountTask
 	Task* finish() override;
+
+	// Inherited via ChangeAccountTask
+	const MyString& getClientName() const override;
 };
 

@@ -18,6 +18,11 @@ const MyString& ChangeAccountTask::getCurrentBankName() const
 	// TODO: insert return statement here
 }
 
+const MyString& ChangeAccountTask::getNewBankName() const
+{
+	return newBank;
+}
+
 unsigned ChangeAccountTask::getAccountId() const
 {
 	return accountID;

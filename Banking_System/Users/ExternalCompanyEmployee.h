@@ -11,7 +11,7 @@ public:
 
 	void saveToFile(std::ofstream& ofs) const;
 
-	void readFromFiile(std::ifstream& ifs);
+	void readFromFile(std::ifstream& ifs);
 
 };
 

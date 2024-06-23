@@ -32,7 +32,7 @@ public:
 
 	void saveToFile(std::ofstream& ofs) const;
 
-	void readFromFiile(std::ifstream& ifs);
+	void readFromFile(std::ifstream& ifs);
 	
 	void exit() const;
 	void whoami() const;

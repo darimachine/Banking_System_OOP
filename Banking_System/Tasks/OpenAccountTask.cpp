@@ -16,6 +16,12 @@ void OpenAccountTask::viewDetails() const
 	cout << "Age: " << client.getAge() << endl;
 }
 
+const MyString& OpenAccountTask::getCurrentBankName() const
+{
+	return bankName;
+	// TODO: insert return statement here
+}
+
 void OpenAccountTask::viewMessage() const 
 {
 	cout << type << " - " << client.getName() << " wants to create an account.\n";
@@ -41,4 +47,9 @@ Task* OpenAccountTask::finish()
 	//besen sum
 	client.addMessage(tempMessage);
 	return nullptr;
+}
+
+const MyString& OpenAccountTask::getClientName() const
+{
+	return client.getName();
 }

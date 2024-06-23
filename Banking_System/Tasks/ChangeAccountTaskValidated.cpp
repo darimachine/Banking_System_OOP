@@ -34,3 +34,8 @@ Task* ChangeAccountTaskValidated::finish()
 {
 	return new ChangeAccountTaskApproved(newBank,client,oldBank,accountID);
 }
+
+const MyString& ChangeAccountTaskValidated::getClientName() const
+{
+	return client.getName();
+}

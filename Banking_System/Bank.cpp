@@ -58,6 +58,30 @@ void Bank::addTask(Task* task)
 	employee.addTask(task);
 }
 
+void Bank::saveToFile(std::ofstream& ofs) const
+{
+	name.saveToFile(ofs);
+	int bankEmployeeSize = bankEmployees.getSize();
+	ofs.write((const char*)&bankEmployeeSize, sizeof(bankEmployeeSize));
+	for (int i = 0; i < bankEmployeeSize; i++)
+	{
+		bankEmployees[i].saveEmployeeToFile(ofs);
+	}
+}
+
+void Bank::readFromFile(std::ifstream& ifs)
+{
+	name.readFromFile(ifs);
+	int bankEmployeeSize;
+	ifs.read((char*)&bankEmployeeSize, sizeof(bankEmployeeSize));
+	for (int i = 0; i < bankEmployeeSize; i++)
+	{
+		BankEmployee current;
+		current.readEmployeeFromFile(ifs);
+		bankEmployees.pushBack(std::move(current));
+	}
+}
+
 
 
 

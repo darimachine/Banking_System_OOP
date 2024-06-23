@@ -1,6 +1,6 @@
 #include "MyString.h"
 #include <cstring>
-#include <fstream>
+
 #pragma warning (disable : 4996)
 
 
@@ -200,8 +200,8 @@ void MyString::saveToFile(std::ofstream& ofs) const
 void MyString::readFromFile(std::ifstream& ifs)
 {
 	free();
-	ifs.read((char*)_size, sizeof(_size));
-	_data = new char[_size + 1];
+	ifs.read((char*)&_size, sizeof(_size));
+	_data = new char[_size + 1] {};
 	ifs.read(_data, _size + 1);
 }
 

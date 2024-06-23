@@ -1,12 +1,14 @@
 #pragma once
 #include "Utilities/MyString.h"
+
 class Check
 {
 private:
 	MyString sender;
 	MyString uniqueCode;
-	unsigned cashToSend;
 	MyString egn;
+	unsigned cashToSend;
+	
 	bool isValidCode(const MyString& code);
 	static int MAX_CODE_SIZE;
 	
@@ -18,5 +20,8 @@ public:
 	const MyString& getCode() const;
 	const MyString& getSender() const;
 	const MyString& getEgn() const;
+
+	void saveToFile(std::ofstream& ofs) const;
+	void readFromFile(std::ifstream& ifs);
 };
 

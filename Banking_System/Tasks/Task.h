@@ -20,9 +20,12 @@ public:
 	
 	const MyString& getType() const;
 	virtual const MyString& getCurrentBankName() const;
+	virtual const MyString& getNewBankName() const;
 	virtual unsigned getAccountId() const;
+	virtual const MyString& getClientName() const = 0;
 	virtual Task* finish() = 0;
 	Client& getClient();
+
 	virtual ~Task() = default;
 };
 

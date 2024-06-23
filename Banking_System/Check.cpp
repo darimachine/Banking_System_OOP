@@ -58,6 +58,22 @@ const MyString& Check::getEgn() const
     return egn;
 }
 
+void Check::saveToFile(std::ofstream& ofs) const
+{
+    sender.saveToFile(ofs);
+    uniqueCode.saveToFile(ofs);
+    egn.saveToFile(ofs);
+    ofs.write((char*)&cashToSend, sizeof(cashToSend));
+}
+
+void Check::readFromFile(std::ifstream& ifs)
+{
+    sender.readFromFile(ifs);
+    uniqueCode.readFromFile(ifs);
+    egn.readFromFile(ifs);
+    ifs.read((char*)&cashToSend, sizeof(cashToSend));
+}
+
 const MyString& Check::getCode() const
 {
     return uniqueCode;

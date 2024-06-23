@@ -14,5 +14,8 @@ public:
 
 	// Inherited via ChangeAccountTask
 	Task* finish() override;
+
+	// Inherited via ChangeAccountTask
+	const MyString& getClientName() const override;
 };
 

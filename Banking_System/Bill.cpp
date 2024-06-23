@@ -23,6 +23,20 @@ void Bill::withdraw(double amount) {
 	}
 }
 
+void Bill::saveToFile(std::ofstream& ofs) const
+{
+	bankName.saveToFile(ofs);
+	ofs.write((const char*)&accountID, sizeof(accountID));
+	ofs.write((const char*)&balance, sizeof(balance));
+}
+
+void Bill::readFromFile(std::ifstream& ifs)
+{
+	bankName.readFromFile(ifs);
+	ifs.read((char*)&accountID, sizeof(accountID));
+	ifs.read((char*)&balance, sizeof(balance));
+}
+
 const MyString& Bill::getBankName() const
 {
 	return bankName;

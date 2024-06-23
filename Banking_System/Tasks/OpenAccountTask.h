@@ -6,7 +6,7 @@ class OpenAccountTask : public Task
 public:
 	OpenAccountTask(const MyString& bankName,Client& clientInfo);
 	void viewDetails() const override;
-
+	const MyString& getCurrentBankName() const;
 	// Inherited via Task
 	void viewMessage() const override;
 
@@ -15,5 +15,8 @@ public:
 
 	// Inherited via Task
 	virtual Task* finish();
+
+	// Inherited via Task
+	const MyString& getClientName() const override;
 };
 

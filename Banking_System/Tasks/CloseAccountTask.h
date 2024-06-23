@@ -18,5 +18,9 @@ public:
 	Task* finish() override;
 	Task* clone() const override;
 
+
+	// Inherited via Task
+	const MyString& getClientName() const override;
+
 };
 

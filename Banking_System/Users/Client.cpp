@@ -166,5 +166,62 @@ void Client::redeem(const MyString& bankName, unsigned accountNumber, const MySt
 
 	
 }
+void Client::saveToFile(std::ofstream& ofs) const {
 
+	User::saveToFile(ofs);
+
+	int msgSize = msg.getSize();
+	ofs.write((char*)&msgSize, sizeof(msgSize));
+	for (int i = 0; i < msgSize; i++)
+	{
+		msg[i].saveToFile(ofs);
+	}
+
+	int bankAccountSize = bankAccounts.getSize();
+	ofs.write((char*)&bankAccountSize, sizeof(bankAccountSize));
+	for (int i = 0; i < bankAccountSize; i++)
+	{
+		bankAccounts[i].saveToFile(ofs);
+	}
+
+	int checkSize = checks.getSize();
+	ofs.write((char*)&checkSize, sizeof(checkSize));
+	for (int i = 0; i < checkSize; i++)
+	{
+		checks[i].saveToFile(ofs);
+	}
+}
+void Client::readFromFile(std::ifstream& ifs) {
+
+	User::readFromFile(ifs);
+
+	int msgSize;
+	ifs.read((char*)&msgSize, sizeof(msgSize));
+	for (int i = 0; i < msgSize; i++)
+	{
+		MyString current;
+		current.readFromFile(ifs);
+		msg.pushBack(std::move(current));
+	}
+
+	int bankAccountSize;
+	ifs.read((char*)&bankAccountSize, sizeof(bankAccountSize));
+	for (int i = 0; i < bankAccountSize; i++)
+	{
+		Bill current;
+		current.readFromFile(ifs);
+		bankAccounts.pushBack(std::move(current));
+	}
+
+	int checkSize;
+	ifs.read((char*)&checkSize, sizeof(checkSize));
+	for (int i = 0; i < checkSize; i++)
+	{
+		Check current;
+		current.readFromFile(ifs);
+		checks.pushBack(std::move(current));
+	}
+
+	
+}
 

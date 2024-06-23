@@ -23,6 +23,9 @@ public:
 	T* operator->();
 	const T* operator->() const;
 
+	T* get();
+	const T* get() const;
+
 	T& operator*();
 	const T& operator*() const;
 	
@@ -101,6 +104,18 @@ T* PolymorphicPtr<T>::operator->()
 
 template<class T>
 const T* PolymorphicPtr<T>::operator->() const
+{
+	return data;
+}
+
+template<class T>
+T* PolymorphicPtr<T>::get()
+{
+	return data;
+}
+
+template<class T>
+const T* PolymorphicPtr<T>::get() const
 {
 	return data;
 }

@@ -40,9 +40,6 @@ public:
 	const Bill& getBill(int index) const;
 	Bill& getBill(int index);
 
-
-	
-
 	static void help();
 
 	void check_avl(const MyString& bankName, unsigned accountNumber) const;
@@ -55,5 +52,7 @@ public:
 	void list(const MyString& bankName) const;
 	void messages() const;
 	
+	void saveToFile(std::ofstream& ofs) const;
+	void readFromFile(std::ifstream& ifs);
 };
 

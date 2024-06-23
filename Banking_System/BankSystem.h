@@ -22,12 +22,37 @@ class BankSystem
 	ExternalCompanyEmployee* externalEmployeeLogged = nullptr;
 
 	LoggedUserType loggedUserType = LoggedUserType::None;
+	
 	BankSystem() = default;
 	BankSystem(const BankSystem&) = delete;
 	BankSystem& operator=(const BankSystem&) = delete;
+
 	bool userAlreadyExistsCheck(User*);
 	bool bankAlreadyExistsCheck(const MyString& bankName);
 
+	Client& findClientByName(const MyString& name);
+	ExternalCompanyEmployee& findExternalCompanyEmployeeByName(const MyString& name);
+	BankEmployee& findBankEmployeeByName(const MyString& name);
+	//Task Saving
+	int getTotalTasks() const;
+	//files SAVE,READ
+	void saveClients() const;
+	void readClients();
+
+	void saveBanks() const;
+	void readBanks();
+
+	void saveExternalEmployees() const;
+	void readExternalEmployee();
+
+	void saveLoggedUser() const;
+	void readLoggedUser();
+	
+	void saveTasks() const;
+	void readTasks();
+
+	
+	
 public:
 
 	static BankSystem& getInstance();
@@ -65,6 +90,10 @@ public:
 	//get type
 	LoggedUserType getType() const;
 
+
+	void save() const;
+
+	void load();
 	void exit();
 
 };

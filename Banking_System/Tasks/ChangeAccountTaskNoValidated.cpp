@@ -36,5 +36,10 @@ Task* ChangeAccountTaskNoValidated::finish()
 	return nullptr;
 }
 
+const MyString& ChangeAccountTaskNoValidated::getClientName() const
+{
+	return client.getName();
+}
+
 
 

@@ -28,6 +28,15 @@ void HandleNoneCommand::execute(BankSystem* app)
 	{
 		app->exit();
 	}
+	else if (command == "save")
+	{
+		app->save();
+		app->exit();
+	}
+	else if (command == "load")
+	{
+		app->load();
+	}
 	else {
 		cout << "Unknown Command\n";
 		cin.clear();

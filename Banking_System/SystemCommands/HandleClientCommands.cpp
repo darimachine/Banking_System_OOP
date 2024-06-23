@@ -65,6 +65,11 @@ void HandleClientCommands::execute(BankSystem* app)
 		app->logout();
 		std::cout << "Logged Out\n";
 	}
+	else if (command == "save")
+	{
+		app->save();
+		app->exit();
+	}
 	else {
 		cout << "Unknown Command\n";
 		cin.clear();

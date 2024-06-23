@@ -1,5 +1,6 @@
 #include "BankEmployee.h"
 #include "Client.h"
+#include "../TaskFileFactory.h"
 using std::cout;
 using std::endl;
 
@@ -108,4 +109,20 @@ void BankEmployee::help()
 const MyString& BankEmployee::getBankAssociated() const
 {
 	return bankAssociated;
+}
+void BankEmployee::saveEmployeeToFile(std::ofstream& ofs) const {
+	User::saveToFile(ofs);
+	bankAssociated.saveToFile(ofs);
+}
+void BankEmployee::readEmployeeFromFile(std::ifstream& ifs) {
+	User::readFromFile(ifs);
+	bankAssociated.readFromFile(ifs);
+}
+void BankEmployee::saveTasksToFile(std::ofstream& ofs) const {
+	int taskCount = tasks.getSize();
+	//ofs.write((const char*)&taskCount, sizeof(taskCount));
+	for (int i = 0; i < taskCount; i++)
+	{
+		TaskFileFactory::saveTask(ofs, tasks[i].get());
+	}
 }

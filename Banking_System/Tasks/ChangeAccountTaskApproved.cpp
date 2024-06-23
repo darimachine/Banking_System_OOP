@@ -31,11 +31,6 @@ void ChangeAccountTaskApproved::viewMessage() const
 	//[1] Change(approved) - Stancho wants to join Health_Savings_Accounts.
 }
 
-const MyString& ChangeAccountTaskApproved::getCurrentBankName() const
-{
-	return newBank;
-}
-
 Task* ChangeAccountTaskApproved::clone() const
 {
 	return new ChangeAccountTaskApproved(*this);
@@ -58,4 +53,9 @@ Task* ChangeAccountTaskApproved::finish()
 	
 	client.addMessage(tempMessage);
 	return nullptr;
+}
+
+const MyString& ChangeAccountTaskApproved::getClientName() const
+{
+	return client.getName();
 }

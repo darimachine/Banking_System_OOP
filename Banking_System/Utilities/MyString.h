@@ -1,7 +1,7 @@
 
 #pragma once
 #include <iostream>
-
+#include <fstream>
 class MyString
 {
 public:
@@ -45,8 +45,8 @@ private:
     void moveFrom(MyString&& other);
 
     char* _data = nullptr;
-    size_t _size;
-    size_t _allocatedDataSize;
+    int _size;
+    int _allocatedDataSize;
 };
 
 

@@ -106,7 +106,7 @@ void User::saveToFile(std::ofstream& ofs) const {
 	password.saveToFile(ofs);
 
 }
-void User::readFromFiile(std::ifstream& ifs) {
+void User::readFromFile(std::ifstream& ifs) {
 	name.readFromFile(ifs);
 	EGN.readFromFile(ifs);
 	ifs.read((char*)&age, sizeof(age));

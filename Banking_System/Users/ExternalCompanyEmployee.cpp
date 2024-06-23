@@ -15,6 +15,6 @@ Check& ExternalCompanyEmployee::sendCheck(double sum, const MyString& code, cons
 void ExternalCompanyEmployee::saveToFile(std::ofstream& ofs) const {
 	User::saveToFile(ofs);
 }
-void ExternalCompanyEmployee::readFromFiile(std::ifstream& ifs) {
-	User::readFromFiile(ifs);
+void ExternalCompanyEmployee::readFromFile(std::ifstream& ifs) {
+	User::readFromFile(ifs);
 }

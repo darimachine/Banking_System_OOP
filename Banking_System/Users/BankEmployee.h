@@ -23,5 +23,10 @@ public:
 	void disapprove(unsigned taskID, const MyString& message);
 	Task* validate(unsigned taskID);
 	static void help();
+
+	void saveEmployeeToFile(std::ofstream& ofs) const;
+	void saveTasksToFile(std::ofstream& ofs) const; // READ WILL BE IN APP BECAUSE WE NEED TO KNOW CLIENT!!
+
+	void readEmployeeFromFile(std::ifstream & ifs);
 };
 

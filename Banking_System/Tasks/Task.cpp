@@ -26,6 +26,11 @@ const MyString& Task::getCurrentBankName() const
     throw std::exception("Not Implemented");
 }
 
+const MyString& Task::getNewBankName() const
+{
+    throw std::exception("Not Implemented");
+}
+
 unsigned Task::getAccountId() const
 {
     throw std::exception("Not Implemented");

@@ -2,6 +2,6 @@
 
 void ShowTasksCommand::execute(BankSystem* app)
 {
-	BankEmployee* bankEmployee = app->getLoggedBankEmployee(); // not reading
+	BankEmployee* bankEmployee = app->getLoggedBankEmployee(); 
 	bankEmployee->showTasks();
 }

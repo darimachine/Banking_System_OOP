@@ -177,6 +177,9 @@
     <ClCompile Include="BankEmployeeCommands\ViewTaskCommand.cpp">
       <Filter>Source Files\BankEmployeeComands</Filter>
     </ClCompile>
+    <ClCompile Include="TaskFileFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Check.h">
@@ -303,6 +306,9 @@
       <Filter>Header Files\BankEmployeeComands</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskFileFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

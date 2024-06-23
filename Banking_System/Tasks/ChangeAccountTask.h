@@ -15,12 +15,13 @@ public:
 
 	// Inherited via Task
 	const MyString& getCurrentBankName() const override;
+	const MyString& getNewBankName() const override;
 	unsigned getAccountId() const override;
-	void viewDetails() const = 0;
-	void viewMessage() const = 0;
+	virtual void viewDetails() const = 0;
+	virtual void viewMessage() const = 0;
 	virtual Task* finish() = 0;
-	Task* clone() const = 0;
-
+	virtual Task* clone() const = 0;
+	virtual ~ChangeAccountTask() = default;
 
 	
 };

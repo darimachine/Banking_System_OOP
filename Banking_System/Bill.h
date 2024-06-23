@@ -1,5 +1,6 @@
 #pragma once
 #include "Utilities/MyString.h"
+
 class Bill
 {
 	
@@ -14,5 +15,8 @@ public:
 	const MyString& getBankName() const;
 	void deposit(double amount);
 	void withdraw(double amount);
+
+	void saveToFile(std::ofstream& ofs) const;
+	void readFromFile(std::ifstream& ifs);
 };
 

@@ -9,7 +9,7 @@ void ApproveCommand::execute(BankSystem* app)
 		Task* currentTask = bankEmployee->approve(taskID);
 		if (currentTask)
 		{
-			MyString newBank =currentTask->getCurrentBankName();
+			MyString newBank =currentTask->getNewBankName();
 			Bank& bankToTransfer = app->findBank(newBank);
 			bankToTransfer.addTask(currentTask);
 		}

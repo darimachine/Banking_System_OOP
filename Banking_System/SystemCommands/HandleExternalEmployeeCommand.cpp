@@ -23,6 +23,11 @@ void HandleExternalEmployeeCommand::execute(BankSystem* app)
 	{
 		app->getLoggedExternalEmployee()->help();
 	}
+	else if (command == "save")
+	{
+		app->save();
+		app->exit();
+	}
 	else {
 		std::cout << "Unknown Command\n";
 		cin.clear();

@@ -30,6 +30,11 @@ Task* CloseAccountTask::clone() const
     return new CloseAccountTask(*this);
 }
 
+const MyString& CloseAccountTask::getClientName() const
+{
+    return client.getName();
+}
+
 unsigned CloseAccountTask::getAccountId() const 
 {
     return accountID;
