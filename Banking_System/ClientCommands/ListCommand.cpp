@@ -10,7 +10,7 @@ void ListCommand::execute(BankSystem* app)
 		Bank& isValid = app->findBank(bankName);
 		client->list(bankName);
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

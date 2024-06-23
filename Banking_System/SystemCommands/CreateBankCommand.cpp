@@ -9,7 +9,7 @@ void CreateBankCommand::execute(BankSystem* app)
 		app->signUpBank(bank);
 		std::cout << "Bank Created Succesfully\n";
 	}
-	catch(std::runtime_error er)
+	catch(std::runtime_error& er)
 	{
 		std::cout << er.what() << std::endl;
 		

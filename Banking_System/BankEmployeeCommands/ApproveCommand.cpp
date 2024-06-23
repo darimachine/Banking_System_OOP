@@ -14,7 +14,7 @@ void ApproveCommand::execute(BankSystem* app)
 			bankToTransfer.addTask(currentTask);
 		}
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

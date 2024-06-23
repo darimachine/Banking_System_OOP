@@ -132,9 +132,6 @@
     <ClCompile Include="SystemCommands\LoginCommand.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
-    <ClCompile Include="SystemCommands\LogOutCommand.cpp">
-      <Filter>Source Files\SystemCommands</Filter>
-    </ClCompile>
     <ClCompile Include="SystemCommands\RegisterCommand.cpp">
       <Filter>Source Files\SystemCommands</Filter>
     </ClCompile>
@@ -258,9 +255,6 @@
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
     <ClInclude Include="SystemCommands\LoginCommand.h">
-      <Filter>Header Files\SystemCommands</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemCommands\LogOutCommand.h">
       <Filter>Header Files\SystemCommands</Filter>
     </ClInclude>
     <ClInclude Include="SystemCommands\RegisterCommand.h">

@@ -14,7 +14,7 @@ void RedeemCommand::execute(BankSystem* app)
 	try {
 		client->redeem(bankName, accountNumber, verificationCode);
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

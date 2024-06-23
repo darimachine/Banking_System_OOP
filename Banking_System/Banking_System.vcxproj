@@ -158,7 +158,6 @@
     <ClCompile Include="SystemCommands\HandleExternalEmployeeCommand.cpp" />
     <ClCompile Include="SystemCommands\HandleNoneCommand.cpp" />
     <ClCompile Include="SystemCommands\LoginCommand.cpp" />
-    <ClCompile Include="SystemCommands\LogOutCommand.cpp" />
     <ClCompile Include="SystemCommands\RegisterCommand.cpp" />
     <ClCompile Include="SystemCommands\RunCommand.cpp" />
     <ClCompile Include="TaskFileFactory.cpp" />
@@ -201,7 +200,6 @@
     <ClInclude Include="SystemCommands\HandleExternalEmployeeCommand.h" />
     <ClInclude Include="SystemCommands\HandleNoneCommand.h" />
     <ClInclude Include="SystemCommands\LoginCommand.h" />
-    <ClInclude Include="SystemCommands\LogOutCommand.h" />
     <ClInclude Include="SystemCommands\RegisterCommand.h" />
     <ClInclude Include="SystemCommands\RunCommand.h" />
     <ClInclude Include="TaskFileFactory.h" />

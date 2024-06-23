@@ -12,7 +12,7 @@ void CheckAvlCommand::execute(BankSystem* app)
 	try {
 		client->check_avl(bankName, accountNumber);
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

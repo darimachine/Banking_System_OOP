@@ -8,7 +8,7 @@ void ViewTaskCommand::execute(BankSystem* app)
 	try {
 		bankEmployee->view(taskID);
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

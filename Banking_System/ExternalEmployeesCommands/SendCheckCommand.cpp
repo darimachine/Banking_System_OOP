@@ -22,7 +22,7 @@ void SendCheckCommand::execute(BankSystem* app)
 		client.addMessage(message);
 		
 	}
-	catch(std::invalid_argument er){
+	catch(std::invalid_argument& er){
 		cout << er.what() << std::endl;
 	}
 }

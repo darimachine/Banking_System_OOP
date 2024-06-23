@@ -11,11 +11,11 @@ void OpenCommand::execute(BankSystem* app)
 		b.addTask(task);
 
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}
-	catch (std::exception er)
+	catch (std::exception& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

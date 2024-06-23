@@ -16,7 +16,7 @@ void ChangeCommand::execute(BankSystem* app)
 		Task* task = client->change(newBankName, oldBankName, accountNumber);
 		newBank.addTask(task);
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

@@ -11,7 +11,7 @@ void ValidateTaskCommand::execute(BankSystem* app)
 		Bank& bank = app->findBank(oldBank);
 		bank.addTask(current);
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

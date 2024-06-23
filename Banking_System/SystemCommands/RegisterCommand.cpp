@@ -40,15 +40,15 @@ void RegisterCommand::execute(BankSystem* app)
 			app->signUpClient(std::move(client));
 			cout << "Succesfully Registered\n";
 		}
-		catch (std::invalid_argument er)
+		catch (std::invalid_argument& er)
 		{
 			cout << er.what() << endl;
 		}
-		catch (std::runtime_error er)
+		catch (std::runtime_error& er)
 		{
 			cout << er.what() << endl;
 		}
-		catch (std::exception er)
+		catch (std::exception& er)
 		{
 			cout << er.what() << endl;
 		}
@@ -66,15 +66,15 @@ void RegisterCommand::execute(BankSystem* app)
 			app->signUpBankEmployee(bankEmployee);
 			cout << "Succesfully Registered\n";
 		}
-		catch (std::invalid_argument er)
+		catch (std::invalid_argument& er)
 		{
 			cout << er.what() << endl;
 		}
-		catch (std::runtime_error er)
+		catch (std::runtime_error& er)
 		{
 			cout << er.what() << endl;
 		}
-		catch (std::exception er)
+		catch (std::exception& er)
 		{
 			cout << er.what() << endl;
 		}
@@ -90,15 +90,15 @@ void RegisterCommand::execute(BankSystem* app)
 			app->signUpExternalEmployee(std::move(extrnalEmployee));
 			cout << "Succesfully Registered\n";
 		}
-		catch (std::invalid_argument er)
+		catch (std::invalid_argument& er)
 		{
 			cout << er.what() << endl;
 		}
-		catch (std::runtime_error er)
+		catch (std::runtime_error& er)
 		{
 			cout << er.what() << endl;
 		}
-		catch (std::exception er)
+		catch (std::exception& er)
 		{
 			cout << er.what() << endl;
 		}

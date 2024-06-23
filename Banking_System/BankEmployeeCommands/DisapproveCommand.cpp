@@ -13,7 +13,7 @@ void DisapproveCommand::execute(BankSystem* app)
 	try {
 		bankEmployee->disapprove(taskID,message);
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}

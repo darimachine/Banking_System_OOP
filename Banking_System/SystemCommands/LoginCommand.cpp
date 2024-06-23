@@ -13,11 +13,11 @@ void LoginCommand::execute(BankSystem* app)
 		app->login(name, password);
 		std::cout << "Login Sucesfull: "<<name << std::endl;
 	}
-	catch (std::runtime_error er)
+	catch (std::runtime_error& er)
 	{
 		std::cout << er.what() << std::endl;
 	}
-	catch (std::invalid_argument er)
+	catch (std::invalid_argument& er)
 	{
 		std::cout << er.what() << std::endl;
 	}
