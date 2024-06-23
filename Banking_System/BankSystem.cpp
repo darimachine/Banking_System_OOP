@@ -427,17 +427,6 @@ Client& BankSystem::getClientByEgn(const MyString& egn)
     throw std::invalid_argument("Client with this EGN does not exist");
 }
 
-const Vector<Client>& BankSystem::getClients() const
-{
-    return clients;
-}
-
-const Vector<Bank>& BankSystem::getBanks() const
-{
-    return banks;
-}
-
-
 void BankSystem::signUpBank(Bank& bank)
 {
     
@@ -564,10 +553,7 @@ void BankSystem::logout()
     }
 }
 
-const Vector<ExternalCompanyEmployee>& BankSystem::getExternalEmployees() const
-{
-    return externalEmployees;
-}
+
 
 const Client* BankSystem::getLoggedClient() const
 {

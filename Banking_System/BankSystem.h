@@ -61,12 +61,6 @@ public:
 
 	Client& getClientByEgn(const MyString& egn);
 
-	const Vector<Client>& getClients() const;
-	const Vector<Bank>& getBanks() const;
-	
-
-	
-
 	void signUpBank(Bank& bank);
 	void signUpClient(Client&& client);
 	void signUpBankEmployee(BankEmployee& bankEmployee);
@@ -76,7 +70,7 @@ public:
 	
 	void logout();
 
-	const Vector<ExternalCompanyEmployee>& getExternalEmployees() const;
+	
 	// get loggedUSER
 	const Client* getLoggedClient() const;
 	Client* getLoggedClient();
@@ -89,7 +83,6 @@ public:
 
 	//get type
 	LoggedUserType getType() const;
-
 
 	void save() const;
 
